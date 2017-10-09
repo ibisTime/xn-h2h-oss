@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
+    <title></title>
+    <!-- css样式 -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/top.css" />
+    <link rel="stylesheet" href="../css/toastr.css" />
+    <!-- js脚本 -->
+</head>
+
+<body>
+    <div class="top-left">
+        <a href="javascript:void(0)" target="_parent" style="display: inline-block; text-align: center;">
+            <img src="../images/logo.png" title="系统首页" style="height:60px; margin-top: 18px;" />
+        </a>
+    </div>
+    <ul class="nav"></ul>
+    <div class="top-right">
+        <ul>
+            <li><a id="change-pwd" target="rightFrame">修改密码</a></li>
+            <li><a id="logout">退出</a></li>
+        </ul>
+        <div class="user">
+            <span id="topUserName"></span>
+            <i>在线&nbsp;&nbsp;</i>
+        </div>
+    </div>
+    <script src="../js/config.js"></script>
+    <script src="../js/lib/jquery-1.10.2.js"></script>
+    <script src="../js/app/com/common-ajax.js"></script>
+    <script src="../js/app/com/top.js"></script>
+    <script src="../js/lib/toastr.js"></script>
+</body>
+
+</html>

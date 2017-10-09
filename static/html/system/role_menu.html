@@ -1,0 +1,27 @@
+<link rel="import" href="../head.html?__inline">
+<!-- css样式 -->
+<link rel="stylesheet" href="../../css/ligerui-tree.css"/>
+<!-- js脚本 -->
+<script src="../../js/lib/ligerTree.base.js"></script>
+<script src="../../js/lib/ligerTree.resource.js"></script>
+<script src="../../js/app/system/role-menu.js"></script>
+<div class="place">
+	<span>位置：</span>
+	<ul class="placeul">
+		<li>权限管理</li>
+		<li>角色管理</li>
+		<li>分配菜单</li>
+	</ul>
+</div>
+<form>
+	<div class="form-body">
+		<div class="form-title"><span>分配菜单</span></div>
+		<ul class="form-info">
+			<li><label>角色编号:</label><input type="text" id="code" name="code" readonly="readonly" class="control-def"/></li>
+			<li><label>角色名称:</label><input type="text" id="name" name="name" readonly="readonly" class="control-def"/></li>
+			<li><label>菜单权限:</label><div id="treeMenu"></div></li>
+			<li><input id="subBtn" type="button" class="btn margin-left-100" value="保存"/><input id="backBtn" type="button" class="btn margin-left-20" value="返回"/></li>
+		</ul>
+	</div>
+</form>
+<link rel="import" href="../foot.html?__inline">

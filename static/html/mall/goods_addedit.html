@@ -1,0 +1,42 @@
+<link rel="import" href="../head.html?__inline">
+<script src="../../js/app/mall/goods-addedit.js"></script>
+<style>
+    #formContainer li {
+        text-align: center;
+    }
+    
+    #formContainer li.clearfix {
+        text-align: initial !important;
+    }
+</style>
+<div class="place">
+    <span>位置：</span>
+    <ul>
+    </ul>
+</div>
+<form id="jsForm">
+    <div class="form-body">
+        <div class="form-title"><span id="page-title"></span></div>
+        <ul class="form-info" id="form-info">
+
+        </ul>
+        <div class="form-title"><span id="page-title2">商品规格</span></div>
+        <div class="tools">
+            <ul class="toolbar">
+                <li style="display:block;" id="addBtn"><span><img src="/static/images/t01.png"></span>新增</li>
+                <li style="display:block;" id="edit2Btn"><span><img src="/static/images/t01.png"></span>修改</li>
+                <li style="display:block;" id="deleteBtn"><span><img src="/static/images/t01.png"></span>删除</li>
+            </ul>
+        </div>
+        <div class="paramTableList">
+            <table id="tableList" class="table table-hover table-striped">
+            </table>
+        </div>
+
+        <div style="text-align: center;margin-top: 30px; padding-bottom: 40px;">
+            <input id="sub1Btn" type="button" class="btn" value="保存">
+            <input id="back1Btn" type="button" class="btn margin-left-20" value="返回">
+        </div>
+    </div>
+</form>
+<link rel="import" href="../foot.html?__inline">

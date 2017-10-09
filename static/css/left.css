@@ -1,0 +1,22 @@
+﻿@charset "utf-8";
+
+/*left.html*/
+html {height: 100%;}
+.left-body {background:url(../images/leftline.gif) repeat-y right;height: 100%;}
+.left-top{cursor: pointer;background:url(../images/lefttop.gif) repeat-x;height:40px;color:#fff;font-size:14px;line-height:40px;transition: all .3s;}
+.left-top span{margin-left:8px; margin-top:10px;margin-right:8px; background:url(../images/leftico.png) no-repeat; width:20px; height:21px;float:left;transition: all .3s;}
+.left-menu{width:187px;}
+.left-menu dd{cursor: pointer;background:url(../images/leftmenubg.gif) repeat-x;line-height:35px;font-weight:bold;font-size:14px;border-right:solid 1px #b7d5df;}
+.left-menu dd span{float:left;margin: 0px 8px 0 12px;}
+.left-menu dd span img{vertical-align: sub;}
+.left-menu dd .menuson{display:none;}
+.left-menu dd:first-child .menuson{display:block;}
+.menuson {line-height:30px; font-weight:normal; }
+.menuson li{cursor:pointer;}
+.menuson li.active{position:relative; background:url(../images/libg.png) repeat-x; line-height:30px; color:#fff;}
+.menuson li cite{display:block; float:left; margin-left:32px; background:url(../images/list.gif) no-repeat; width:16px; height:16px; margin-top:7px;}
+.menuson li.active cite{background:url(../images/list1.gif) no-repeat;}
+.menuson li.active i{display:block; background:url(../images/sj.png) no-repeat; width:6px; height:11px; position:absolute; right:0;z-index:10000; top:9px; right:-1px;}
+.menuson li a{ display:block; *display:inline; *padding-top:5px;}
+.menuson li.active a{color:#fff;}
+.collapse span {transform: rotate(-90deg);}
