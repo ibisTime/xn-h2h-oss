@@ -63,7 +63,6 @@ $(function() {
             } else {
                 toastr.warning("不是待审核的状态")
             }
-
         }
     });
 

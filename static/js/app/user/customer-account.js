@@ -32,7 +32,6 @@ $(function() {
         title: '状态',
         type: 'select',
         key: 'currency_type',
-
         formatter: Dict.getNameForList('account_status'),
         // search: true
     }, {

@@ -1,6 +1,8 @@
 $('title', window.parent.document).html(OSS.systemName);
 $(function() {
     if (!sessionStorage.getItem('token')) {
+        // +         //判断域名是 hhr开头 合伙人域名 kind为PA
+        // var kind = document.domain.substr(0, 1) == 'h' ? 'PA' : (sessionStorage.getItem('loginKind') || 'P')
         location.href = 'signin.html?kind=' + (sessionStorage.getItem('loginKind') || 'P')
         return;
     }
