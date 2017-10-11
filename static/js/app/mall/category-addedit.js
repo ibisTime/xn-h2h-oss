@@ -4,7 +4,7 @@ $(function() {
 
     var fields = [{
         field: 'name',
-        title: '类别名称',
+        title: '大类名称',
         required: true,
         readonly: view
     }, {
@@ -32,13 +32,12 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        detailCode: '',
-        addCode: '',
-        editCode: '',
+        detailCode: '810006',
+        addCode: '810000',
         view: view,
         beforeSubmit: function(data) {
-            // data.parentCode = 0;
-            // data.type = "1";
+            data.parentCode = 0;
+            data.type = "4";
             return data;
         }
     });

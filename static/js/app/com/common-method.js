@@ -673,7 +673,7 @@ function buildList(options) {
                 // 单个日期搜索框
             } else if (item.type == 'date' || item.type == "datetime") {
                 dateTimeList1.push(item);
-                html += '<li  class="search-form-li" style="width: 50%;"><label>' + item.title + '</label><input id="' + item.field + '" name="' + item.field + '" class="lay-input lay-input1"/></li>';
+                html += '<li  class="search-form-li" style="width: 25%;"><label>' + item.title + '</label><input id="' + item.field + '" name="' + item.field + '" class="lay-input lay-input1"/></li>';
             } else if (item.type == "citySelect") {
                 html += '<li class="clearfix" style="width:56%;"><label>' + item.title + '</label><div id="city-group"><select id="province" name="province" class="control-def prov"></select>' + '<select id="city" name="city" class="control-def city"></select>' + '<select id="area" name="area" class="control-def dist"></select></div></li>';
             } else {

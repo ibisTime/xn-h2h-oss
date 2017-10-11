@@ -1,37 +1,75 @@
 $(function() {
     var view = getQueryString('v');
     var code = getQueryString('code');
-
+    var start = {
+        elem: '#startDatetime',
+        format: 'YYYY-MM-DD hh:mm:ss',
+        min: laydate.now(),
+        istime: true,
+        choose: function(datas) {
+            var d = new Date(datas);
+            d.setDate(d.getDate());
+            datas = dateTimeFormat(d);
+            end.min = datas;
+            end.start = datas
+        }
+    };
+    var end = {
+        elem: '#endDatetime',
+        format: 'YYYY-MM-DD hh:mm:ss',
+        min: laydate.now(),
+        istime: true,
+        choose: function(datas) {
+            var d = new Date(datas);
+            d.setDate(d.getDate());
+            datas = dateTimeFormat(d);
+            start.max = datas;
+        }
+    };
     var fields = [{
-        field: 'name',
-        title: "面值",
-        number: true,
-        required: true,
-        readonly: view
-    }, {
-        title: '有效期',
-        field: 'pic',
-        required: true,
-        number: true,
-        readonly: view,
-    }, {
-        field: '',
+        field: 'toUser',
         title: '获取人',
-        required: true,
         type: "select",
-        pageCode: "",
+        pageCode: "805120",
         keyName: "userId",
         valueName: "mobile",
         searchName: "mobile",
         required: true,
         readonly: view
+    }, {
+        field: 'parValue',
+        title: "面值",
+        number: true,
+        required: true,
+        readonly: view
+    }, {
+        title: '有效期开始时间',
+        field: 'startDatetime',
+        type: "datetime",
+        formatter: dateTimeFormat,
+        dateOption: start,
+        readonly: view,
+        required: true
+    }, {
+        title: '有效期截止时间',
+        field: 'endDatetime',
+        type: "datetime",
+        formatter: dateTimeFormat,
+        dateOption: end,
+        readonly: view,
+        required: true
+    }, {
+        field: "releaser",
+        value: getUserName(),
+        hidden: true,
+        required: true
     }];
     var viewList = [{
         title: "状态",
         field: "status",
-        key: "category_status",
-
-        formatter: Dict.getNameForList("category_status")
+        key: "coupn_status",
+        formatter: Dict.getNameForList("coupn_status"),
+        readonly: view
     }];
     if (view) {
         fields = fields.concat(viewList);
@@ -39,9 +77,8 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        detailCode: ' ',
-        addCode: ' ',
-        editCode: ' ',
+        detailCode: '801116',
+        addCode: "801110",
         view: view
     });
 

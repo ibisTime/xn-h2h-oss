@@ -4,28 +4,42 @@ $(function() {
         title: '',
         checkbox: true
     }, {
+        field: "parentCode",
+        title: "父类",
+        type: "select",
+        listCode: "810007",
+        keyName: "code",
+        valueName: "name",
+        searchName: "name",
+        search: true,
+    }, {
         field: 'name',
-        title: '类别名称',
+        title: '小类名称',
         search: true,
     }, {
         field: 'status',
         title: '状态',
         key: "category_status",
-
         search: true,
         formatter: Dict.getNameForList("category_status"),
     }, {
         field: 'orderNo',
-        title: '次序',
-        sortable: true,
+        title: '次序'
     }];
 
     buildList({
         columns: columns,
         pageCode: '808005',
         searchParams: {
-            type: "1",
+            type: "4",
             companyCode: OSS.company
+        },
+        beforeEdit: function(data) {
+            if (data.status == 1) {
+                toastr.info("已上架不可修改");
+                return "";
+            };
+            window.location.href = './kind_addedit.html?code=' + data.code;
         }
     });
 
@@ -41,7 +55,7 @@ $(function() {
         }
         confirm("确认上架？").then(function() {
             reqApi({
-                code: '808003',
+                code: '810003',
                 json: { "code": selRecords[0].code }
             }).then(function() {
                 toastr.info("操作成功");
@@ -58,12 +72,12 @@ $(function() {
             return;
         }
         if (selRecords[0].status != 1) {
-            toastr.info("还未上架");
+            toastr.info("还未上架,不可下架");
             return;
         }
         confirm("确认下架？").then(function() {
             reqApi({
-                code: '808004',
+                code: '810004',
                 json: { "code": selRecords[0].code }
             }).then(function() {
                 toastr.info("操作成功");

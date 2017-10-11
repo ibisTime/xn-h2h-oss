@@ -3,8 +3,18 @@ $(function() {
     var code = getQueryString('code');
 
     var fields = [{
+        field: "parentCode",
+        title: "父类",
+        type: "select",
+        listCode: "810007",
+        keyName: "code",
+        valueName: "name",
+        searchName: "name",
+        required: true,
+        readonly: view
+    }, {
         field: 'name',
-        title: '类别名称',
+        title: '小类名称',
         required: true,
         readonly: view
     }, {
@@ -24,7 +34,6 @@ $(function() {
         title: "状态",
         field: "status",
         key: "category_status",
-
         formatter: Dict.getNameForList("category_status")
     }];
     if (view) {
@@ -33,13 +42,12 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        detailCode: '808006',
-        addCode: '808000',
-        editCode: '808002',
+        detailCode: '810006',
+        addCode: '810000',
         view: view,
         beforeSubmit: function(data) {
-            data.parentCode = 0;
-            data.type = "1";
+            // data.parentCode = 0;
+            data.type = "4";
             return data;
         }
     });

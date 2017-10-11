@@ -1,1268 +1,1274 @@
 ﻿@charset "utf-8";
 * {
-	border: 0;
-	margin: 0;
-	padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	font-size: 9pt;
-	font-family: '微软雅黑';
-	margin: 0 auto;
+    font-size: 9pt;
+    font-family: '微软雅黑';
+    margin: 0 auto;
 }
 
 ul {
-	font-size: 9pt;
-	display: block;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    font-size: 9pt;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 li {
-	font-size: 9pt;
-	display: block;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    font-size: 9pt;
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 tr {
-	font-size: 9pt;
+    font-size: 9pt;
 }
 
 img {
-	border: 0;
+    border: 0;
 }
 
 .maxImg-w800 {
-	max-width: 800px;
+    max-width: 800px;
 }
 
 dl,
 dt,
 dd,
 span {
-	font-size: 9pt;
-	margin: 0;
-	padding: 0;
-	display: block
+    font-size: 9pt;
+    margin: 0;
+    padding: 0;
+    display: block
 }
 
 a,
 a:focus {
-	text-decoration: none;
-	color: #000;
-	outline: none;
-	blr: expression(this.onFocus=this.blur());
+    text-decoration: none;
+    color: #000;
+    outline: none;
+    blr: expression(this.onFocus=this.blur());
 }
 
 a:hover {
-	color: #00a4ac;
-	text-decoration: none;
+    color: #00a4ac;
+    text-decoration: none;
 }
 
 table {
-	font-size: 9pt;
-	border-collapse: collapse;
-	border-spacing: 0;
+    font-size: 9pt;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 cite {
-	font-style: normal;
+    font-style: normal;
 }
 
 h2 {
-	font-weight: normal;
+    font-weight: normal;
 }
 
 thead {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body p {
-	margin: 0;
+    margin: 0;
 }
 
 .m5 {
-	margin: 5px
+    margin: 5px
 }
 
 .m10 {
-	margin: 10px
+    margin: 10px
 }
 
 .m20 {
-	margin: 20px
+    margin: 20px
 }
 
 .p5 {
-	padding: 5px
+    padding: 5px
 }
 
 .p10 {
-	padding: 10px
+    padding: 10px
 }
 
 .p20 {
-	padding: 20px
+    padding: 20px
 }
 
 .margin-top-10 {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .margin-right-10 {
-	margin-top: 10px;
+    margin-top: 10px;
 }
 
 .margin-right-20 {
-	margin-right: 20px;
+    margin-right: 20px;
 }
 
 .margin-right-40 {
-	margin-right: 40px;
+    margin-right: 40px;
 }
 
 .margin-right-60 {
-	margin-right: 60px;
+    margin-right: 60px;
 }
 
 .margin-right-80 {
-	margin-right: 80px;
+    margin-right: 80px;
 }
 
 .margin-left-10 {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 .margin-left-20 {
-	margin-left: 150px;
+    margin-left: 150px;
 }
 
 .margin-left-40 {
-	margin-left: 40px;
+    margin-left: 40px;
 }
 
 .margin-left-60 {
-	margin-left: 60px;
+    margin-left: 60px;
 }
 
 .margin-left-80 {
-	margin-left: 80px;
+    margin-left: 80px;
 }
 
 .margin-left-100 {
-	margin-left: 135px;
+    margin-left: 135px;
 }
 
 .table-striped {
-	width: 100%!important;
+    width: 100%!important;
 }
 
 .form-info .btn+.btn {
-	margin-left: 60px;
+    margin-left: 60px;
 }
 
 
 /*遮罩层*/
 
 .mask-pop {
-	left: 0;
-	top: 0;
-	z-index: 9999;
-	display: none;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, .3) url(../images/loader.gif) center center no-repeat;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3) url(../images/loader.gif) center center no-repeat;
 }
 
 
 /*控件样式*/
 
 input.error {
-	border-color: red;
-	margin: 0;
-	width: 320px;
-	border: 1px solid red!important;
+    border-color: red;
+    margin: 0;
+    width: 320px;
+    border: 1px solid red!important;
 }
 
 .control-def {
-	width: 345px;
-	height: 32px;
-	line-height: 32px;
-	border-top: solid 1px #a7b5bc;
-	border-left: solid 1px #a7b5bc;
-	border-right: solid 1px #ced9df;
-	border-bottom: solid 1px #ced9df;
-	background: url(../images/inputbg.gif) repeat-x;
-	text-indent: 10px;
+    width: 345px;
+    height: 32px;
+    line-height: 32px;
+    border-top: solid 1px #a7b5bc;
+    border-left: solid 1px #a7b5bc;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
+    background: url(../images/inputbg.gif) repeat-x;
+    text-indent: 10px;
 }
 
 .btn {
-	width: 95px;
-	height: 35px;
-	background-color: #2598d0;
-	border-radius: 4px;
-	font-size: 14px;
-	color: #fff;
-	cursor: pointer;
-	margin-right: 8px;
+    width: 95px;
+    height: 35px;
+    background-color: #2598d0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 8px;
 }
 
 input[type="radio"].error {
-	width: auto;
+    width: auto;
 }
 
 input[type="checkbox"].error {
-	width: auto;
+    width: auto;
 }
 
 span.error {
-	background: none;
-	margin: 0;
-	width: auto;
-	display: inline-block;
-	color: red;
-	font-size: 13px;
-	margin-left: 8px;
-	position: relative;
+    background: none;
+    margin: 0;
+    width: auto;
+    display: inline-block;
+    color: red;
+    font-size: 13px;
+    margin-left: 8px;
+    position: relative;
 }
 
 select.error {
-	background: none;
-	margin: 0;
-	width: auto;
+    background: none;
+    margin: 0;
+    width: auto;
 }
 
 select {
-	border-top: solid 1px #a7b5bc;
-	border-left: solid 1px #a7b5bc;
-	height: auto;
-	border-right: solid 1px #ced9df;
-	border-bottom: solid 1px #ced9df;
+    border-top: solid 1px #a7b5bc;
+    border-left: solid 1px #a7b5bc;
+    height: auto;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
 }
 
 textarea.error {
-	background: none;
-	margin: 0;
-	border: 1px solid red!important;
+    background: none;
+    margin: 0;
+    border: 1px solid red!important;
 }
 
 textarea {
-	width: 800px;
-	border: 1px solid #ced9df;
-	padding: 10px;
+    width: 800px;
+    border: 1px solid #ced9df;
+    padding: 10px;
 }
 
 
 /*时间控件样式*/
 
 .lay-input {
-	position: relative;
-	height: 34px;
-	overflow: hidden;
-	width: 320px;
-	border: 1px solid #ccc;
-	background: url(../images/skins/danlan/icon.png) 290px center no-repeat;
-	text-indent: 10px;
+    position: relative;
+    height: 34px;
+    overflow: hidden;
+    width: 320px;
+    border: 1px solid #ccc;
+    background: url(../images/skins/danlan/icon.png) 290px center no-repeat;
+    text-indent: 10px;
 }
 
 .lay-input input {
-	position: absolute;
-	left: -1px;
-	top: -1px;
-	height: 32px;
-	line-height: 32px;
-	width: 170px;
-	padding: 0 35px 0 5px;
-	border: none;
-	background: none;
-	z-index: 1;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    height: 32px;
+    line-height: 32px;
+    width: 170px;
+    padding: 0 35px 0 5px;
+    border: none;
+    background: none;
+    z-index: 1;
 }
 
 .lay-input label {
-	position: absolute;
-	right: 4px;
-	top: 5px;
-	width: 25px;
-	border: none;
+    position: absolute;
+    right: 4px;
+    top: 5px;
+    width: 25px;
+    border: none;
 }
 
 
 /*导航栏*/
 
 .place {
-	margin-top: -10px;
-	height: 40px;
-	background: url(../images/righttop.gif) repeat-x;
+    margin-top: -10px;
+    height: 40px;
+    background: url(../images/righttop.gif) repeat-x;
 }
 
 .place span {
-	line-height: 40px;
-	font-weight: bold;
-	float: left;
-	margin-left: 12px;
+    line-height: 40px;
+    font-weight: bold;
+    float: left;
+    margin-left: 12px;
 }
 
 .place li {
-	float: left;
-	line-height: 40px;
-	padding-left: 7px;
-	padding-right: 12px;
-	background: url(../images/rlist.gif) no-repeat right;
+    float: left;
+    line-height: 40px;
+    padding-left: 7px;
+    padding-right: 12px;
+    background: url(../images/rlist.gif) no-repeat right;
 }
 
 .place li:last-child {
-	background: none;
+    background: none;
 }
 
 
 /*搜索表单*/
 
 .right-info {
-	padding: 8px;
+    padding: 8px;
 }
 
 .search-form {
-	display: block;
-	overflow: hidden;
-	padding: 10px 0;
+    display: block;
+    overflow: hidden;
+    padding: 10px 0;
 }
 
 .search-form li {
-	float: left;
-	margin-bottom: 10px;
-	line-height: 34px;
-	width: 25%;
-	height: 34px;
+    float: left;
+    margin-bottom: 10px;
+    line-height: 34px;
+    width: 25%;
+    height: 34px;
+    /*max-width: 200px;*/
 }
 
 .search-form li.search-form-li {
-	min-width: 245px;
+    min-width: 245px;
 }
 
 .search-form li label {
-	padding-right: 10px;
-	float: left;
-	line-height: 34px;
+    padding-right: 10px;
+    float: left;
+    line-height: 34px;
 }
 
 .search-form input[type=text] {
-	width: 185px;
-	height: 30px;
-	line-height: 32px;
-	border-top: solid 1px #ced9df;
-	border-left: solid 1px #ced9df;
-	border-right: solid 1px #ced9df;
-	border-bottom: solid 1px #ced9df;
-	background: none;
-	text-indent: 10px;
+    width: 185px;
+    height: 30px;
+    line-height: 32px;
+    border-top: solid 1px #ced9df;
+    border-left: solid 1px #ced9df;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
+    background: none;
+    text-indent: 10px;
 }
 
 .search-form li select {
-	width: 185px;
-	height: 32px;
-	border-radius: 0;
-	border-top: solid 1px #a7b5bc;
-	border-left: solid 1px #a7b5bc;
-	border-right: solid 1px #ced9df;
-	border-bottom: solid 1px #ced9df;
+    width: 185px;
+    height: 32px;
+    border-radius: 0;
+    border-top: solid 1px #a7b5bc;
+    border-left: solid 1px #a7b5bc;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
 }
 
 .search-form .btn {
-	width: 95px;
-	height: 35px;
-	background-color: #2598d0;
-	border-radius: 4px;
-	font-size: 14px;
-	color: #fff;
-	cursor: pointer;
-	margin-right: 8px;
+    width: 95px;
+    height: 35px;
+    background-color: #2598d0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 8px;
 }
 
 
 /*操作按钮*/
 
 .tools {
-	clear: both;
-	height: 0px;
-	margin-bottom: 8px;
+    clear: both;
+    height: 0px;
+    margin-bottom: 8px;
 }
 
 .toolbar {
-	float: left;
+    float: left;
 }
 
 .toolbar li {
-	line-height: 33px;
-	height: 33px;
-	border: solid 1px #d3dbde;
-	float: left;
-	padding-right: 10px;
-	margin-right: 5px;
-	border-radius: 3px;
-	cursor: pointer;
-	display: none;
+    line-height: 33px;
+    height: 33px;
+    border: solid 1px #d3dbde;
+    float: left;
+    padding-right: 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
 }
 
 .toolbar li span {
-	float: left;
-	margin-left: 5px;
-	margin-right: 5px;
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 
 /*操作按钮-二级页面*/
 
 .toolbar_children {
-	float: left;
+    float: left;
 }
 
 .toolbar_children li {
-	line-height: 33px;
-	height: 33px;
-	border: solid 1px #d3dbde;
-	float: left;
-	padding-right: 10px;
-	margin-right: 5px;
-	border-radius: 3px;
-	cursor: pointer;
+    line-height: 33px;
+    height: 33px;
+    border: solid 1px #d3dbde;
+    float: left;
+    padding-right: 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+    cursor: pointer;
 }
 
 .toolbar_children li span {
-	float: left;
-	margin-left: 10px;
-	margin-right: 5px;
-	margin-top: 5px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 
 /*编辑表单*/
 
 .form-body {
-	padding: 10px 18px;
+    padding: 10px 18px;
 }
 
 #jsForm .form-body .bootstrap-table {
-	margin-left: 100px;
-	margin-bottom: 17px;
+    margin-left: 100px;
+    margin-bottom: 17px;
 }
 
 .form-body .bootstrap-table {
-	margin-bottom: 17px;
+    margin-bottom: 17px;
 }
 
 .form-title {
-	font-weight: bold;
-	border-bottom: solid 1px #d0dee5;
-	line-height: 35px;
-	position: relative;
-	height: 35px;
-	margin-bottom: 28px;
-	clear: both;
+    font-weight: bold;
+    border-bottom: solid 1px #d0dee5;
+    line-height: 35px;
+    position: relative;
+    height: 35px;
+    margin-bottom: 28px;
+    clear: both;
 }
 
 .form-title span {
-	font-weight: bold;
-	font-size: 14px;
-	border-bottom: solid 3px #66c9f3;
-	float: left;
-	position: absolute;
-	z-index: 100;
-	bottom: -1px;
-	padding: 0 3px;
-	height: 30px;
-	line-height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: solid 3px #66c9f3;
+    float: left;
+    position: absolute;
+    z-index: 100;
+    bottom: -1px;
+    padding: 0 3px;
+    height: 30px;
+    line-height: 30px;
 }
 
 .form-info {
-	padding-left: 23px;
+    padding-left: 23px;
 }
 
 .form-info li {
-	margin-bottom: 13px;
-	clear: both;
-	padding-right: 20px;
+    margin-bottom: 13px;
+    clear: both;
+    padding-right: 20px;
 }
-.ui-dialog .form-info li{
-	text-align: center;
+
+.ui-dialog .form-info li {
+    text-align: center;
 }
 
 .form-info input[type=checkbox]+input[type=checkbox] {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 .form-info li label {
-	width: 194px;
-	line-height: 33px;
-	display: block;
-	float: left;
-	text-align: right;
-	padding-right: 15px;
-	margin-bottom: 0px;
+    width: 194px;
+    line-height: 33px;
+    display: block;
+    float: left;
+    text-align: right;
+    padding-right: 15px;
+    margin-bottom: 0px;
 }
 
 .form-info li i {
-	color: #7f7f7f;
-	padding-left: 0px;
-	font-style: normal;
+    color: #7f7f7f;
+    padding-left: 0px;
+    font-style: normal;
 }
 
 .form-info li cite {
-	display: block;
-	padding-top: 10px;
+    display: block;
+    padding-top: 10px;
 }
 
 .form-info li .control-def {
-	overflow: hidden;
-	width: 320px;
-	height: 32px;
-	line-height: 32px;
-	border-top: solid 1px #ced9df;
-	border-left: solid 1px #ced9df;
-	border-right: solid 1px #ced9df;
-	border-bottom: solid 1px #ced9df;
-	background: none;
-	text-indent: 10px;
+    overflow: hidden;
+    width: 320px;
+    height: 32px;
+    line-height: 32px;
+    border-top: solid 1px #ced9df;
+    border-left: solid 1px #ced9df;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
+    background: none;
+    text-indent: 10px;
 }
 
 .form-info li .textinput {
-	border-top: solid 1px #a7b5bc;
-	border-left: solid 1px #a7b5bc;
-	border-right: solid 1px #ced9df;
-	border-bottom: solid 1px #ced9df;
-	background: url(../images/inputbg.gif) repeat-x;
-	padding: 10px;
-	width: 504px;
-	height: 135px;
-	line-height: 20px;
-	overflow: hidden;
+    border-top: solid 1px #a7b5bc;
+    border-left: solid 1px #a7b5bc;
+    border-right: solid 1px #ced9df;
+    border-bottom: solid 1px #ced9df;
+    background: url(../images/inputbg.gif) repeat-x;
+    padding: 10px;
+    width: 504px;
+    height: 135px;
+    line-height: 20px;
+    overflow: hidden;
 }
 
 .form-info .btn {
-	width: 95px;
-	height: 35px;
-	background-color: #2598d0;
-	border-radius: 4px;
-	font-size: 14px;
-	color: #fff;
-	cursor: pointer;
-	margin-left: 180px;
-	margin-top: 20px;
+    width: 95px;
+    height: 35px;
+    background-color: #2598d0;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 180px;
+    margin-top: 20px;
 }
 
 .form-info span {
-	line-height: 33px;
-	display: table;
-	white-space: normal;
+    line-height: 33px;
+    display: table;
+    white-space: normal;
 }
 
 .form-info span.error {
-	display: inline-block;
+    display: inline-block;
 }
 
 .form-info a span {
-	line-height: 14px;
-	display: inline-block;
+    line-height: 14px;
+    display: inline-block;
 }
 
 .form-info .bootstrap-table {
-	display: inline-block;
+    display: inline-block;
 }
 
 .form-info .bootstrap-table .btn {
-	color: #333;
-	background-color: #fff;
-	border-color: #ccc;
-	margin: 0;
-	text-align: center;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin: 0;
+    text-align: center;
 }
 
 .form-info .bootstrap-table .btn span {
-	display: block;
-	line-height: initial;
+    display: block;
+    line-height: initial;
 }
 
 .form-info .bootstrap-table .btn span.caret {
-	display: inline-block
+    display: inline-block
 }
 
 
 /*Tab切换页*/
 
 .itab {
-	height: 36px;
-	border-bottom: solid 1px #d0dee5;
-	position: relative;
-	border-left: solid 1px #d3dbde;
+    height: 36px;
+    border-bottom: solid 1px #d0dee5;
+    position: relative;
+    border-left: solid 1px #d3dbde;
 }
 
 .itab ul li {
-	float: left;
-	height: 37px;
-	line-height: 37px;
-	background: url(../images/itabbg.png) repeat-x;
-	border-right: solid 1px #d3dbde;
+    float: left;
+    height: 37px;
+    line-height: 37px;
+    background: url(../images/itabbg.png) repeat-x;
+    border-right: solid 1px #d3dbde;
 }
 
 .itab ul li a {
-	font-size: 14px;
-	color: #000;
-	padding-left: 25px;
-	padding-right: 25px;
+    font-size: 14px;
+    color: #000;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .itab ul li a.selected {
-	height: 37px;
-	display: block;
-	background: url(../images/itabbg1.png) repeat-x;
-	font-weight: bold;
+    height: 37px;
+    display: block;
+    background: url(../images/itabbg1.png) repeat-x;
+    font-weight: bold;
 }
 
 .tabson {
-	margin: 18px 0px;
+    margin: 18px 0px;
 }
 
 .formtext {
-	height: 45px;
-	padding-left: 25px;
-	line-height: 20px;
-	color: #848383;
+    height: 45px;
+    padding-left: 25px;
+    line-height: 20px;
+    color: #848383;
 }
 
 .formtext b {
-	color: #d70101;
+    color: #d70101;
 }
 
 .forminfo b {
-	color: #ea2020;
-	padding-left: 3px;
+    color: #ea2020;
+    padding-left: 3px;
 }
 
 
 /*table*/
 
 .filetable {
-	width: 100%;
+    width: 100%;
 }
 
 .filetable tr {
-	line-height: 35px;
+    line-height: 35px;
 }
 
 .filetable th {
-	text-align: right;
-	text-indent: 15px;
-	font-weight: bolder;
-	font-size: 14px;
-	padding-right: 50px
+    text-align: right;
+    text-indent: 15px;
+    font-weight: bolder;
+    font-size: 14px;
+    padding-right: 50px
 }
 
 .filetable tr td {
-	text-indent: 15px;
-	line-height: 23px;
+    text-indent: 15px;
+    line-height: 23px;
 }
 
 .filetable tr td img {
-	margin-right: 5px;
+    margin-right: 5px;
 }
 
 .tdlast {
-	text-align: right;
+    text-align: right;
 }
 
 .filetable tr:hover {
-	background: #f5f8fa;
-	cursor: pointer;
+    background: #f5f8fa;
+    cursor: pointer;
 }
 
 td {
-	word-wrap: break-word
+    word-wrap: break-word
 }
 
 
 /*table*/
 
 .common-table {
-	width: 1000px;
+    width: 1000px;
 }
 
 .common-table tr th {
-	width: 135px;
-	line-height: 34px;
-	text-indent: 21px;
-	text-align: right;
-	vertical-align: top;
+    width: 135px;
+    line-height: 34px;
+    text-indent: 21px;
+    text-align: right;
+    vertical-align: top;
 }
 
 .common-table tr td {
-	width: 180px;
-	text-indent: 18px;
+    width: 180px;
+    text-indent: 18px;
 }
 
 .common-table tr td span {
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 .bootstrap-table tr td {
-	text-indent: 0px;
+    text-indent: 0px;
 }
 
 
 /*imgtable*/
 
 .imgtable {
-	width: 95%;
-	border: solid 1px #cbcbcb;
-	margin-top: 10px;
-	margin-button: 10px;
-	margin-left: 13px;
+    width: 95%;
+    border: solid 1px #cbcbcb;
+    margin-top: 10px;
+    margin-button: 10px;
+    margin-left: 13px;
 }
 
 .imgtable tr th {
-	background: url(../images/th.gif) repeat-x;
-	height: 34px;
-	line-height: 34px;
-	border: solid 1px #c7c7c7;
-	text-indent: 21px;
-	text-align: center;
-	padding-right: 0px
+    background: url(../images/th.gif) repeat-x;
+    height: 34px;
+    line-height: 34px;
+    border: solid 1px #c7c7c7;
+    text-indent: 21px;
+    text-align: center;
+    padding-right: 0px
 }
 
 .imgtable td {
-	line-height: 20px;
-	text-indent: 21px;
-	border: dotted 1px #c7c7c7;
+    line-height: 20px;
+    text-indent: 21px;
+    border: dotted 1px #c7c7c7;
 }
 
 .imgtable td img {
-	margin: 10px 20px 10px 0;
+    margin: 10px 20px 10px 0;
 }
 
 .imgtable td p {
-	color: #919191;
+    color: #919191;
 }
 
 .imgtable td i {
-	font-style: normal;
-	color: #ea2020;
+    font-style: normal;
+    color: #ea2020;
 }
 
 .imgtd {
-	text-indent: 0;
+    text-indent: 0;
 }
 
 .imgtable tbody tr.odd {
-	background: #f5f8fa;
+    background: #f5f8fa;
 }
 
 .imgtable tbody tr:hover {
-	background: #e5ebee;
+    background: #e5ebee;
 }
 
 
 /*布局*/
 
 .flex {
-	display: -webkit-box;
-	display: flex;
+    display: -webkit-box;
+    display: flex;
 }
 
 .flex1 {
-	-webkit-box-flex: 1;
-	flex: 1
+    -webkit-box-flex: 1;
+    flex: 1
 }
 
 .flex2 {
-	-webkit-box-flex: 2;
-	flex: 2
+    -webkit-box-flex: 2;
+    flex: 2
 }
 
 .flex3 {
-	-webkit-box-flex: 3;
-	flex: 3
+    -webkit-box-flex: 3;
+    flex: 3
 }
 
 .flex4 {
-	-webkit-box-flex: 4;
-	flex: 4
+    -webkit-box-flex: 4;
+    flex: 4
 }
 
 .flex5 {
-	-webkit-box-flex: 5;
-	flex: 5
+    -webkit-box-flex: 5;
+    flex: 5
 }
 
 .flex6 {
-	-webkit-box-flex: 6;
-	flex: 6
+    -webkit-box-flex: 6;
+    flex: 6
 }
 
 .flex-dv {
-	-webkit-box-orient: vertical;
-	flex-direction: column;
+    -webkit-box-orient: vertical;
+    flex-direction: column;
 }
 
 .flex-c {
-	-webkit-box-align: center;
-	-webkit-box-pack: center;
-	justify-content: center;
-	align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .flex-jb {
-	-webkit-box-pack: justify;
-	justify-content: space-between;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
 }
 
 .flex-as {
-	align-items: stretch;
+    align-items: stretch;
 }
 
 .flex>a {
-	display: block;
+    display: block;
 }
 
 .flex-fw {
-	flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .menuson .disabled a {
-	color: #ADADAD;
+    color: #ADADAD;
 }
 
 #uploadBtn1 {
-	margin-left: 0px;
+    margin-left: 0px;
 }
 
 #jsForm .form-body {
-	min-width: 600px;
+    min-width: 600px;
 }
+
 #jsForm .form-body li .bootstrap-table {
-	margin-left: 0px;
+    margin-left: 0px;
 }
 
 a:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .btn-file {
-	color: #999;
-	background: white;
-	border: 1px solid #ced9df;
-	display: inline-flex;
-	padding: 0px 12px;
-	font-weight: 400;
-	line-height: 1.42857143;
-	text-align: center;
-	white-space: nowrap;
-	cursor: pointer;
-	border-radius: 3px;
-	position: relative;
-	margin-bottom: 5px;
-	width: 110px;
+    color: #999;
+    background: white;
+    border: 1px solid #ced9df;
+    display: inline-flex;
+    padding: 0px 12px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 5px;
+    width: 110px;
 }
 
 .btn-file:active,
 .btn-file:focus {
-	color: #333;
-	background-color: #e6e6e6;
-	border-color: #adadad;
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
 }
 
 .btn-file>input {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 0;
-	opacity: 0;
-	filter: alpha(opacity=0);
-	font-size: 23px;
-	height: 100%;
-	width: 100%;
-	direction: ltr;
-	cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    font-size: 23px;
+    height: 100%;
+    width: 100%;
+    direction: ltr;
+    cursor: pointer;
 }
 
 .btn-file>span {
-	cursor: pointer;
-	text-align: center;
-	width: 100%;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
 }
 
 input[type=file] {
-	display: block;
+    display: block;
 }
 
 .btn-file+img {
-	display: block;
-	max-width: 300px;
-	position: relative;
+    display: block;
+    max-width: 300px;
+    position: relative;
 }
 
 .img-ctn img {
-	max-width: 300px;
-	transition: .3s all ease-out;
-	transform: scale(1);
+    max-width: 300px;
+    transition: .3s all ease-out;
+    transform: scale(1);
 }
 
 .btn-file+img:hover {
-	outline: 1px solid #949494;
-	box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.072);
+    outline: 1px solid #949494;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.072);
 }
 
 .form-info .imgCls img {
-	transition: .3s all ease-out;
-	transform: scale3d(1, 1, 1);
-	transform-origin: left;
+    transition: .3s all ease-out;
+    transform: scale3d(1, 1, 1);
+    transform-origin: left;
 }
 
 .form-info .imgCls img:hover {
-	outline: 1px solid #949494;
-	box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.072);
-	transform: scale3d(1.02, 1.02, 1.02);
+    outline: 1px solid #949494;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.072);
+    transform: scale3d(1.02, 1.02, 1.02);
 }
 
 .iconctn {
-	width: 500px;
-	height: 250px;
-	border: 1px solid #ddd;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
-	/* margin-top: 1px; */
-	/* border: 0; */
-	/* top: 0; */
-	overflow: auto;
-	border-radius: 2px;
-	position: absolute;
-	bottom: 0px;
-	right: -200px;
-	white-space: normal;
-	text-align: left;
-	background: #fff;
-	color: #5A5A5A;
+    width: 500px;
+    height: 250px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    /* margin-top: 1px; */
+    /* border: 0; */
+    /* top: 0; */
+    overflow: auto;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0px;
+    right: -200px;
+    white-space: normal;
+    text-align: left;
+    background: #fff;
+    color: #5A5A5A;
 }
 
 .iconctn li {
-	display: inline-block;
-	position: relative;
-	z-index: 0;
-	padding: 2px 4px;
-	border-radius: 4px;
-	list-style: none;
-	text-align: center;
-	font-weight: normal;
-	font-size: 40px;
-	cursor: pointer;
-	vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+    padding: 2px 4px;
+    border-radius: 4px;
+    list-style: none;
+    text-align: center;
+    font-weight: normal;
+    font-size: 40px;
+    cursor: pointer;
+    vertical-align: middle;
 }
 
 .iconctn li:active {
-	background: #ddd;
+    background: #ddd;
 }
 
 .form-info .btn-file span.error {
-	display: table;
+    display: table;
 }
 
 .btn-file.error {
-	border: 1px solid red;
+    border: 1px solid red;
 }
 
 .alert-warning {
-	color: #8a6d3b;
-	background-color: #fcf8e3;
-	border-color: #faebcc;
-	padding: 15px;
-	margin-bottom: 20px;
-	border: 1px solid transparent;
-	border-radius: 4px;
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 .pop-form .form-info li label {
-	width: 90px;
+    width: 90px;
 }
 
 .pop-form .form-info .btn {
-	margin-left: 10px;
+    margin-left: 10px;
 }
-.pop-form .form-info .btn:first-child{
-	margin-left: 40px;
+
+.pop-form .form-info .btn:first-child {
+    margin-left: 40px;
 }
 
 .pop-form .form-body {
-	padding: 0px;
+    padding: 0px;
 }
 
 .pop-form .form-body .form-info {
-	padding: 0px;
+    padding: 0px;
 }
 
 .float-img {
-	position: absolute;
-	z-index: 10000;
-	transition: .3s all;
-	display: none;
-	box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22), 0 25px 55px rgba(0, 0, 0, 0.21);
+    position: absolute;
+    z-index: 10000;
+    transition: .3s all;
+    display: none;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22), 0 25px 55px rgba(0, 0, 0, 0.21);
 }
 
 li input[type="radio"] {
-	vertical-align: top;
-	margin-top: 10px;
+    vertical-align: top;
+    margin-top: 10px;
 }
 
 .form-info li label.radio-text {
-	display: inline-block;
-	margin-top: 10px;
-	margin-right: 50px;
-	width: auto;
-	line-height: initial;
-	font-weight: normal;
-	padding-right: 0;
-	max-width: none;
-	float: initial;
-	margin-left: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 50px;
+    width: auto;
+    line-height: initial;
+    font-weight: normal;
+    padding-right: 0;
+    max-width: none;
+    float: initial;
+    margin-left: 5px;
 }
 
 .btn .caret {
-	margin-top: -20px;
+    margin-top: -20px;
 }
 
 .form-info li .wangEditor-txt i {
-	color: inherit;
-	padding-left: 0px;
-	font-style: italic;
+    color: inherit;
+    padding-left: 0px;
+    font-style: italic;
 }
 
 .form-info li .wangEditor-drop-panel i {
-	color: inherit;
-	padding-left: 0px;
+    color: inherit;
+    padding-left: 0px;
 }
 
 .form-info .wangEditor-drop-list a span {
-	line-height: normal;
+    line-height: normal;
 }
 
 .wangEditor-container .wangEditor-menu-container i {
-	padding-left: 0px;
-	color: #2B2B2B;
+    padding-left: 0px;
+    color: #2B2B2B;
 }
 
 .wangEditor-container .wangEditor-menu-container .selected i {
-	color: #1e88e5;
+    color: #1e88e5;
 }
 
 .form-info li label b {
-	color: red;
+    color: red;
 }
 
 .img-ctn img+.zmdi-close-circle-o {
-	display: none;
-	padding-left: 0px;
-	margin: auto;
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	-webkit-transform: translate(-50%, -50%);
-	font-size: 40px;
-	color: #505050;
-	cursor: pointer;
+    display: none;
+    padding-left: 0px;
+    margin: auto;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    -webkit-transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #505050;
+    cursor: pointer;
 }
 
 .img-ctn .zmdi-download {
-	display: none;
-	padding-left: 0px;
-	margin: auto;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	font-size: 40px;
-	color: #77ADFF;
-	cursor: pointer;
+    display: none;
+    padding-left: 0px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #77ADFF;
+    cursor: pointer;
 }
 
 .img-ctn:hover .zmdi-close-circle-o,
 .img-ctn:hover .zmdi-download {
-	display: block;
+    display: block;
 }
 
 .img-ctn .zmdi-close-circle-o:hover,
 .img-ctn .zmdi-download:hover {
-	display: block;
+    display: block;
 }
 
 .img-ctn:hover img {
-	-webkit-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
 }
 
 .img-ctn+.img-ctn,
 .form-info img+img {
-	margin-left: 10px;
+    margin-left: 10px;
 }
 
 .field-help {
-	font-size: 14px;
-	margin-right: 2px;
+    font-size: 14px;
+    margin-right: 2px;
 }
 
 
 /*宽度*/
 
 .wp10 {
-	width: 10%;
+    width: 10%;
 }
 
 .wp15 {
-	width: 15%;
+    width: 15%;
 }
 
 .wp20 {
-	width: 20%;
+    width: 20%;
 }
 
 .wp24 {
-	width: 24%;
+    width: 24%;
 }
 
 .wp25 {
-	width: 25%;
+    width: 25%;
 }
 
 .wp28 {
-	width: 28%;
+    width: 28%;
 }
 
 .wp30 {
-	width: 30%;
+    width: 30%;
 }
 
 .wp33 {
-	width: 33.33333333333333%;
+    width: 33.33333333333333%;
 }
 
 .wp40 {
-	width: 40%;
+    width: 40%;
 }
 
 .wp49 {
-	width: 49%;
+    width: 49%;
 }
 
 .wp50 {
-	width: 50%;
+    width: 50%;
 }
 
 .wp60 {
-	width: 60%;
+    width: 60%;
 }
 
 .wp70 {
-	width: 70%;
+    width: 70%;
 }
 
 .wp72 {
-	width: 72%;
+    width: 72%;
 }
 
 .wp75 {
-	width: 75%;
+    width: 75%;
 }
 
 .wp76 {
-	width: 76%;
+    width: 76%;
 }
 
 .wp80 {
-	width: 80%;
+    width: 80%;
 }
 
 .wp90 {
-	width: 90%;
+    width: 90%;
 }
 
 .wp100 {
-	width: 100%;
+    width: 100%;
 }
 
 
 /*高度*/
 
 .hp100 {
-	height: 100%;
+    height: 100%;
 }
 
 .card {
-	position: relative;
-	background: #fff;
-	margin-bottom: 30px;
-	border-radius: 2px;
-	border: 1px solid #D2D2D2;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
-	padding: 10px;
+    position: relative;
+    background: #fff;
+    margin-bottom: 30px;
+    border-radius: 2px;
+    border: 1px solid #D2D2D2;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    padding: 10px;
 }
 
 svg {
-	transform: rotate(-90deg);
-	transform-origin: 50 50;
+    transform: rotate(-90deg);
+    transform-origin: 50 50;
 }
 
 svg circle {
-	transition: all 3s ease-out;
+    transition: all 3s ease-out;
 }
 
 svg circle:hover {
-	stroke-dasharray: 180px!important;
-	stroke-dashoffset: 0 !important;
+    stroke-dasharray: 180px!important;
+    stroke-dashoffset: 0 !important;
 }
 
 .pop-form .form-info {
-	padding-left: 0px;
+    padding-left: 0px;
 }
 
 .full-screen {
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
 }
 
 .img-ctn {
-	margin-right: 10px;
+    margin-right: 10px;
 }
 
 .btn-file.disabled {
-	background: #ddd;
+    background: #ddd;
 }
 
 .imgCls {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .lay-input1 {
-	width: 175px !important;
-	background-position: 145px center !important;
+    width: 175px !important;
+    background-position: 145px center !important;
 }
 
 .paramTableList .bootstrap-table {
-	margin-left: 0 !important;
+    margin-left: 0 !important;
 }
 
 .noneData p {
-	text-align: center;
-	padding-top: 50px;
-	font-size: 14px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 14px;
 }
+
 .center-img-wrap {
-	max-width: 300px;
+    max-width: 300px;
     position: relative;
 }
 
-#pic{
-	overflow: hidden;
+#pic {
+    overflow: hidden;
 }
-.search-form-li-date{
-	min-width: 455px !important;
+
+.search-form-li-date {
+    min-width: 455px !important;
 }

@@ -10,7 +10,7 @@ $(function() {
         field: 'location',
         title: '位置',
         type: 'select',
-        key: "product_location",
+        key: "active_location",
         required: true,
     }, {
         field: 'orderNo',
@@ -25,7 +25,7 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        detailCode: '808026',
+        detailCode: '801071',
     });
 
     $("#subBtn").off("click").click(function() {
@@ -35,7 +35,7 @@ $(function() {
                 data.code = code;
                 data.remark = $("#remark").val();
                 reqApi({
-                    code: '',
+                    code: '801063',
                     json: data
                 }).then(function() {
                     sucDetail();
