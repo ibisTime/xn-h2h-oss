@@ -18,4 +18,4 @@ OSS.picShow = '?imageMogr2/auto-orient/interlace/1';
 //系统登录有效时间
 OSS.userValidTime = 30;
 //系统userid
-OSS.SYS_USER = '';
+OSS.SYS_USER = 'SYS_USER_WTW';

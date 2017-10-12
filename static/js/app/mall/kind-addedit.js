@@ -44,6 +44,7 @@ $(function() {
         code: code,
         detailCode: '810006',
         addCode: '810000',
+        editCode: "810002",
         view: view,
         beforeSubmit: function(data) {
             // data.parentCode = 0;

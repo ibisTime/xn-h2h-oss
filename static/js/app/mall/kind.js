@@ -29,7 +29,7 @@ $(function() {
 
     buildList({
         columns: columns,
-        pageCode: '808005',
+        pageCode: '810005',
         searchParams: {
             type: "4",
             companyCode: OSS.company
