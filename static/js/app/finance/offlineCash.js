@@ -68,6 +68,9 @@ $(function() {
         field2: 'approveDateEnd',
         twoDate: true,
         search: true,
+    },{
+        field:"payUser",
+        title:"回录人"
     }, {
         field: 'payDatetime',
         title: '回录时间',

@@ -45,7 +45,7 @@ $(function() {
         }
     }, {
         field: 'value1',
-        title: "折扣率（%）",
+        title: "折扣率",
         number: true,
         required: true,
         readonly: view

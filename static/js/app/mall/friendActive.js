@@ -56,6 +56,13 @@ $(function() {
         columns: columns,
         pageCode: '801050',
         deleteCode: '801041',
+        beforeEdit: function(data) {
+            if (data.status == "1") {
+                toastr.warning("上架中，不可修改");
+                return "";
+            }
+            window.location.href = "./friendActive_addedit.html?code=" + data.code;
+        },
         searchParams: {
             type: "2",
             companyCode: OSS.company

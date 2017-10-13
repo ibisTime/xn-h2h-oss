@@ -32,9 +32,9 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        detailCode: '810006',
-        addCode: '810000',
-        editCode: "810002",
+        detailCode: '808005',
+        addCode: '808000',
+        editCode: "808002",
         view: view,
         beforeSubmit: function(data) {
             data.parentCode = 0;

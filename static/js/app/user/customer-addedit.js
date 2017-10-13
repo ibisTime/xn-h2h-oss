@@ -7,8 +7,11 @@ $(function() {
         field: 'mobile',
         title: '手机号',
         required: true,
-        readonly: view,
-        mobile: true
+        readonly: view
+    }, {
+        title: "昵称",
+        field: "nickname",
+        readonly: view
     }, {
         field: 'idKind',
         title: '证件类型',

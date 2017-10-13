@@ -9,9 +9,8 @@ $(function() {
         title: '手机号',
         search: true
     }, {
-        field: 'realName',
-        title: '姓名',
-        search: true
+        field: 'nickname',
+        title: '昵称',
     }, {
         field: 'idNo',
         title: '证件号码',

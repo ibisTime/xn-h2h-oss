@@ -39,7 +39,8 @@ $(function() {
     }, {
         field: 'parValue',
         title: "面值",
-        number: true,
+        amount:true,
+        formatter:moneyFormat
         required: true,
         readonly: view
     }, {

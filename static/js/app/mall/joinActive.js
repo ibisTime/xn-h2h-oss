@@ -13,7 +13,7 @@ $(function() {
         search: true
     }, {
         field: 'value1',
-        title: "折扣率（%）",
+        title: "折扣率",
     }, {
         field: 'description',
         title: '活动图文详述',
@@ -56,6 +56,13 @@ $(function() {
         columns: columns,
         pageCode: '801070',
         deleteCode: '801061',
+        beforeEdit: function(data) {
+            if (data.status == "1") {
+                toastr.warning("上架中，不可修改");
+                return "";
+            }
+            window.location.href = "./joinActive_addedit.html?code=" + data.code;
+        },
         searchParams: {
             companyCode: OSS.company
         }

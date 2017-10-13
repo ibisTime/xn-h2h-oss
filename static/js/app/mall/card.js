@@ -27,7 +27,8 @@ $(function() {
         }
     }, {
         field: 'parValue',
-        title: '面值'
+        title: '面值',
+        formatter:moneyFormat
     }, {
         title: '有效期开始时间',
         field: 'startDatetime',

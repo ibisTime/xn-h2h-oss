@@ -46,12 +46,9 @@ $(function() {
     buildList({
         columns: columns,
         pageCode: '808025',
-        deleteCode: '808011',
+        // deleteCode: '808011',
         searchParams: {
             companyCode: OSS.company
-        },
-        beforeDetail: function(data) {
-            window.location.href = "product_detail.html?Code=" + data.code + "&v=1";
         },
         beforeEdit: function(data) {
             if (data.status == 3) {
@@ -67,18 +64,40 @@ $(function() {
         if (selRecords.length <= 0) {
             toastr.info("请选择记录");
             return;
-        }
+        };
 
         if (selRecords.length > 1) {
             toastr.info("不能多选");
             return;
-        }
+        };
 
         if (selRecords[0].status != 1 && selRecords[0].status != 4) {
-            toastr.info("该商品状态不可上架");
+            toastr.info("该商品状态不可强制上架");
             return;
-        }
-        window.location.href = "product_up.html?Code=" + selRecords[0].code + "&v=1";
+        };
+        confirm("确认上架？").then(function() {
+            reqApi({
+                code: '808013',
+                json: { "code": selRecords[0].code, loaction: "0", orderNo: "0", remark: "重新上架" }
+            }).then(function() {
+                toastr.info("操作成功");
+                $('#tableList').bootstrapTable('refresh', { url: $('#tableList').bootstrapTable('getOptions').url });
+            });
+        });
+    });
+     //热门设置
+    $('#hotBtn').click(function() {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        };
+
+        if (selRecords.length > 1) {
+            toastr.info("不能多选");
+            return;
+        };
+       window.location.href="./goods_up.html?code="+selRecords[0].code;
     });
     //下架
     $('#downBtn').click(function() {
@@ -94,32 +113,19 @@ $(function() {
         }
 
         if (selRecords[0].status != 3) {
-            toastr.info("该商品状态不可下架");
+            toastr.info("该商品状态不可强制下架");
             return;
         }
-        confirm("确认下架？").then(function() {
+        confirm("确认强制下架？").then(function() {
             reqApi({
                 code: '808014',
-                json: { "code": selRecords[0].code }
+                json: { "code": selRecords[0].code, remark: "强制下架" }
             }).then(function() {
                 toastr.info("操作成功");
                 $('#tableList').bootstrapTable('refresh', { url: $('#tableList').bootstrapTable('getOptions').url });
             });
         }, function() {});
 
-    });
-    //一键新增
-    $('#copyBtn').click(function() {
-        var selRecords = $('#tableList').bootstrapTable('getSelections');
-        if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
-            return;
-        }
-        if (selRecords.length > 1) {
-            toastr.info("不能多选");
-            return;
-        }
-        window.location.href = "product_addeditCopy.html?code=" + selRecords[0].code + '&type=' + selRecords[0].type;
     });
 
 });
