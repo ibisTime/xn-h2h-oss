@@ -5,6 +5,13 @@ $(function() {
         title: '',
         checkbox: true
     }, {
+        title: "活动类型",
+        field: "type",
+        type: "select",
+        key: "cz_active_type",
+        formatter: Dict.getNameForList("cz_active_type"),
+        search: true
+    }, {
         field: 'currency',
         title: "赠送币种",
         type: "select",
@@ -64,7 +71,7 @@ $(function() {
             window.location.href = "./active_addedit.html?code=" + data.code;
         },
         searchParams: {
-            type: "1",
+            // type: "1",
             companyCode: OSS.company
         }
     });

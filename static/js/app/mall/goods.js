@@ -9,28 +9,67 @@ $(function() {
         title: '商品名称',
         search: true,
     }, {
-        field: 'type',
-        title: '类型',
+        field: 'category',
+        title: '大类',
         type: 'select',
         listCode: '808007',
         params: {
-            type: '1',
+            type: '4',
             parentCode: 0,
         },
         keyName: 'code',
         valueName: 'name',
+        searchName: 'name',
         search: true
+    }, {
+        field: 'type',
+        title: '小类',
+        type: 'select',
+        listCode: '808007',
+        params: {
+            type: '4',
+            // parentCode: 1,
+        },
+        keyName: 'code',
+        valueName: 'name',
+        searchName: 'name',
+        search: true
+    }, {
+        title: "原价",
+        field: "originalPrice",
+        formatter: moneyFormat
+    }, {
+        title: "售价",
+        field: "price",
+        formatter: moneyFormat
+    }, {
+        field: 'isNew',
+        title: '是否全新',
+        type: 'select',
+        data: { "0": "否", "1": " 是" },
+        search: true,
+    }, {
+        field: 'isPublish',
+        title: '是否发布到圈子',
+        type: 'select',
+        data: { "0": "否", "1": " 是" },
+        search: true,
+    }, {
+        field: 'isJoin',
+        title: '是否参加活动',
+        type: 'select',
+        data: { "0": "否", "1": " 是" },
+        search: true,
     }, {
         field: 'location',
         title: '位置',
         type: 'select',
         key: "product_location",
-
         formatter: Dict.getNameForList("product_location"),
         search: true,
     }, {
         field: 'orderNo',
-        title: '序号'
+        title: 'UI次序'
     }, {
         field: 'status',
         title: '状态',
@@ -46,16 +85,8 @@ $(function() {
     buildList({
         columns: columns,
         pageCode: '808025',
-        // deleteCode: '808011',
         searchParams: {
             companyCode: OSS.company
-        },
-        beforeEdit: function(data) {
-            if (data.status == 3) {
-                toastr.info("已上架，不可修改");
-                return;
-            }
-            window.location.href = "product_addedit.html?Code=" + data.code + '&type=' + data.type;
         }
     });
     //上架
@@ -72,20 +103,12 @@ $(function() {
         };
 
         if (selRecords[0].status != 1 && selRecords[0].status != 4) {
-            toastr.info("该商品状态不可强制上架");
+            toastr.info("该商品状态不可上架");
             return;
         };
-        confirm("确认上架？").then(function() {
-            reqApi({
-                code: '808013',
-                json: { "code": selRecords[0].code, loaction: "0", orderNo: "0", remark: "重新上架" }
-            }).then(function() {
-                toastr.info("操作成功");
-                $('#tableList').bootstrapTable('refresh', { url: $('#tableList').bootstrapTable('getOptions').url });
-            });
-        });
+        window.location.href = "./goods_up.html?code=" + selRecords[0].code;
     });
-     //热门设置
+    //热门设置
     $('#hotBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
@@ -97,7 +120,7 @@ $(function() {
             toastr.info("不能多选");
             return;
         };
-       window.location.href="./goods_up.html?code="+selRecords[0].code;
+        window.location.href = "./goods_hot.html?code=" + selRecords[0].code;
     });
     //下架
     $('#downBtn').click(function() {

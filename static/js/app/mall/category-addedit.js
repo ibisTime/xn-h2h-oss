@@ -32,7 +32,7 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        detailCode: '808005',
+        detailCode: '808006',
         addCode: '808000',
         editCode: "808002",
         view: view,

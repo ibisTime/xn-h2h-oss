@@ -28,10 +28,11 @@ $(function() {
         }
     };
     var fields = [{
+        title: "活动类型",
         field: "type",
-        value: '1',
-        hidden: true,
-        required: true
+        type: "select",
+        key: "cz_active_type",
+        required: true,
     }, {
         field: 'currency',
         title: "赠送币种",

@@ -35,7 +35,7 @@ $(function() {
                 data.code = code;
                 data.remark = $("#remark").val();
                 reqApi({
-                    code: '808013',
+                    code: '808016',
                     json: data
                 }).then(function() {
                     sucDetail();
