@@ -40,7 +40,7 @@ $(function() {
         field: 'parValue',
         title: "面值",
         amount:true,
-        formatter:moneyFormat
+        formatter:moneyFormat,
         required: true,
         readonly: view
     }, {

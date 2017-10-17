@@ -20,6 +20,21 @@ $(function() {
         keyName: 'code',
         valueName: 'name',
         searchName: 'name',
+        onChange: function(v, data) {
+            if (v) {
+                $("#type").renderDropdown({
+                    listCode: "808007",
+                    params: {
+                        type: "4",
+                        parentCode: v,
+                        // status:""
+                    },
+                    keyName: "code",
+                    valueName: "name",
+                    searchName: "name"
+                });
+            }
+        },
         search: true
     }, {
         field: 'type',
