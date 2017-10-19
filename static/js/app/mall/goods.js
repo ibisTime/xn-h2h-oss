@@ -5,6 +5,9 @@ $(function() {
         title: '',
         checkbox: true
     }, {
+        title: "商品发布人",
+        field: "mobile"
+    }, {
         field: 'name',
         title: '商品名称',
         search: true,
@@ -15,7 +18,7 @@ $(function() {
         listCode: '808007',
         params: {
             type: '4',
-            parentCode: 0,
+            parentCode: '0',
         },
         keyName: 'code',
         valueName: 'name',
@@ -35,7 +38,11 @@ $(function() {
                 });
             }
         },
-        search: true
+        search: true,
+        visible: false
+    }, {
+        field: 'categoryName',
+        title: '大类',
     }, {
         field: 'type',
         title: '小类',
@@ -43,12 +50,16 @@ $(function() {
         listCode: '808007',
         params: {
             type: '4',
-            // parentCode: 1,
+            parentCode: "1",
         },
         keyName: 'code',
         valueName: 'name',
         searchName: 'name',
-        search: true
+        search: true,
+        visible: false
+    }, {
+        field: 'typeName',
+        title: '小类',
     }, {
         title: "原价",
         field: "originalPrice",

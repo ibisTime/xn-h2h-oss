@@ -57,7 +57,7 @@ $(function() {
             toastr.info("请选择记录");
             return;
         }
-        window.location.href = "../finance/ledger.html?&a=1&accountCode=" + selRecords[0].accountNumber;
+        window.location.href = "../finance/ledger.html?&a=1&accountNumber=" + selRecords[0].accountNumber + "&kind=" + selRecords[0].currency;
     });
     $('#goBackBtn').click(function() {
         window.location.href = "customer.html"

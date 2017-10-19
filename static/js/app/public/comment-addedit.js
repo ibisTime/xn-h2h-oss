@@ -32,50 +32,45 @@ $(function() {
         readonly: true
     }];
     var fields = [{
-        title: '商品名称',
-        field: 'entityName',
-        readonly: true
-    }, {
-        title: "评论内容",
-        field: "content",
-        readonly: true
-    }, {
-        title: '评论人',
-        field: 'nickname',
-        readonly: true
-    }, {
-        title: "星级",
-        field: "score",
-        formatter: function(v, data) {
-            if (v == 1) {
-                return "1颗星"
-            } else if (v == 2) {
-                return "2颗星"
-            } else if (v == 3) {
-                return "3颗星"
-            } else if (v == 4) {
-                return "4颗星"
-            } else if (v == 5) {
-                return "5颗星"
+            title: '针对内容',
+            field: 'entityName',
+            formatter: function(v, data) {
+                if (v) {
+                    return "商品：" + v;
+                } else {
+                    return "订单：" + data.entityCode;
+                }
             }
         },
-    }, {
-        title: '评论时间',
-        field: 'commentDatetime',
-        readonly: true,
-        formatter: dateTimeFormat
-    }, {
-        title: '状态',
-        field: 'status',
-        readonly: true,
-        type: 'select',
-        data: {
-            "A": "已发布",
-            "B": "审批通过",
-            "C": "审批不通过",
-            "D": "被过滤"
+        {
+            title: "评论内容",
+            field: "content",
+            readonly: true
+        },
+        {
+            title: '评论人',
+            field: 'nickname',
+            readonly: true
+        },
+        {
+            title: '评论时间',
+            field: 'commentDatetime',
+            readonly: true,
+            formatter: dateTimeFormat
+        },
+        {
+            title: '状态',
+            field: 'status',
+            readonly: true,
+            type: 'select',
+            data: {
+                "A": "已发布",
+                "B": "审批通过",
+                "C": "审批不通过",
+                "D": "被过滤"
+            }
         }
-    }];
+    ];
     if (view) {
         remarkNote = [];
         fields = fields.concat(checkList),

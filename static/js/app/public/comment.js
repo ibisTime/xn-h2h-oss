@@ -6,9 +6,16 @@ $(function() {
         title: '',
         checkbox: true
     }, {
-        title: '商品名称',
+        title: '针对内容',
         field: 'entityName',
-        search: true
+        formatter: function(v, data) {
+                if (v) {
+                    return "商品：" + v;
+                } else {
+                    return "订单：" + data.entityCode;
+                }
+            }
+            // search: true
     }, {
         field: 'content',
         title: '评论内容'
@@ -33,13 +40,13 @@ $(function() {
         title: '状态',
         type: 'select',
         data: {
-            // "D": "被过滤",
+            "D": "被过滤",
             "A": "已发布",
             "B": "审批通过",
             "C": "审批不通过",
         },
-        search: true
-            // key: 'comment_status'
+        // search: true
+        // key: 'comment_status'
     }, {
         field: 'nickname',
         title: '评论人'

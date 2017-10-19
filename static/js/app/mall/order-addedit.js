@@ -3,9 +3,6 @@ $(function() {
     var code = getQueryString('code');
 
     var fields = [{
-            title: "订单信息",
-            type: "title"
-        }, {
             field: 'code1',
             title: '订单编号',
             formatter: function(v, data) {
@@ -41,6 +38,30 @@ $(function() {
             formatter: dateTimeFormat,
             readonly: true
         }, {
+            title: "商品名称",
+            field: "name",
+            formatter: function(v, data) {
+                return data.productOrderList[0].productName;
+            },
+            readonly: true
+        }, {
+            title: "商品发布人",
+            field: "companyUser",
+            formatter: function(v, data) {
+                if (data.companyUser) {
+                    return data.companyUser.loginName;
+                }
+            },
+            readonly: true
+        }, {
+            title: "订单价格",
+            field: "amount1",
+            formatter: moneyFormat
+        }, {
+            title: "运费",
+            field: "yunfei",
+            formatter: moneyFormat
+        }, {
             field: 'payAmount3',
             title: '实际支付总额',
             formatter: function(v, data) {
@@ -67,27 +88,19 @@ $(function() {
             formatter: dateTimeFormat,
             readonly: true
         }, {
+            title: "支付方式",
+            field: "payType",
+            type: "select",
+            key: "pay_type",
+            readonly: true
+        }, {
+            title: "催货次数",
+            field: "promptTimes",
+            readonly: true
+        }, {
             field: 'remark',
             title: '备注',
             readonly: true
-        }, {
-            title: "商品信息",
-            type: "title"
-        }, {
-            title: "商品信息",
-            field: "productOrderList",
-            type: "o2m",
-            readonly: true,
-            columns: [{
-                title: "商品名称",
-                field: "name",
-                formatter: function(v, data) {
-                    return data.productName;
-                }
-            }, {
-                title: "数量",
-                field: "quantity"
-            }]
         },
         {
             title: "发货信息",
@@ -96,24 +109,24 @@ $(function() {
             title: '物流公司',
             field: 'logisticsCompany',
             type: 'select',
-            key: 'kd_company',
+            key: 'back_kd_company',
             readonly: true,
 
         }, {
             title: '物流单号',
             field: 'logisticsCode',
             readonly: true,
-            formatter: function(v, data) {
-                if (v) {
-                    return v
-                } else {
-                    $("#logisticsCompany").parent().hide();
-                    $("#logisticsCode").parent().hide();
-                    $("#deliverer").parent().hide();
-                    $("#deliveryDatetime").parent().hide();
-                    $("#pdf").parent().hide();
-                }
-            }
+            // formatter: function(v, data) {
+            //     if (v) {
+            //         return v
+            //     } else {
+            //         $("#logisticsCompany").parent().hide();
+            //         $("#logisticsCode").parent().hide();
+            //         $("#deliverer").parent().hide();
+            //         $("#deliveryDatetime").parent().hide();
+            //         $("#pdf").parent().hide();
+            //     }
+            // }
         }, {
             field: 'deliverer',
             title: '发货人',
@@ -147,24 +160,11 @@ $(function() {
                 title: "商品名称",
                 field: "entityName",
             }, {
-                title: "内容",
-                field: "content"
+                title: '评论人',
+                field: 'nickname'
             }, {
-                title: "星级",
-                field: "score",
-                formatter: function(v, data) {
-                    if (v == 1) {
-                        return "1颗星"
-                    } else if (v == 2) {
-                        return "2颗星"
-                    } else if (v == 3) {
-                        return "3颗星"
-                    } else if (v == 4) {
-                        return "4颗星"
-                    } else if (v == 5) {
-                        return "5颗星"
-                    }
-                },
+                title: "评论内容",
+                field: "content"
             }, {
                 title: "评论时间",
                 field: "commentDatetime",

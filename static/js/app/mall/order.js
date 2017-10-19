@@ -25,7 +25,7 @@ $(function() {
             companyCode: OSS.company
         },
         keyName: 'userId',
-        valueName: 'mobile',
+        valueName: '{{mobile.DATA}}--{{nickname.DATA}}',
         searchName: 'mobile',
     }, {
         field: 'productName',
@@ -39,6 +39,14 @@ $(function() {
 
         }
     }, {
+        title: "商品发布人",
+        field: "companyUser",
+        formatter: function(v, data) {
+            if (data.companyUser) {
+                return data.companyUser.loginName;
+            }
+        }
+    }, {
         field: 'payType',
         title: '买单方式',
         key: 'pay_type',
@@ -49,6 +57,18 @@ $(function() {
         field: 'amount1',
         title: '订单价格',
         formatter: moneyFormat
+    }, {
+        title: "运费",
+        field: "yunfei",
+        formatter: moneyFormat
+    }, {
+        title: "收件人",
+        field: "receiver",
+        search: true
+    }, {
+        title: "收件人联系方式",
+        field: "reMobile",
+        search: true
     }, {
         field: 'applyDatetime',
         title: '下单时间',

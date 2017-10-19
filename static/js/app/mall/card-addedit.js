@@ -34,13 +34,18 @@ $(function() {
         keyName: "userId",
         valueName: "mobile",
         searchName: "mobile",
+        params: {
+            updater: "",
+            kind: "C",
+            // status: "1"
+        },
         required: true,
         readonly: view
     }, {
         field: 'parValue',
         title: "面值",
-        amount:true,
-        formatter:moneyFormat,
+        amount: true,
+        formatter: moneyFormat,
         required: true,
         readonly: view
     }, {

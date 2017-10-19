@@ -1,30 +1,22 @@
 $(function() {
     var code = getQueryString('code');
     var view = getQueryString('v');
-    var typeData = {}
-    reqApi({
-        code: '808007'
-    }).done(function(d) {
-        d.forEach(function(v, i) {
-            typeData[v.code] = v.name;
-        })
-    });
 
     var fields = [{
+        title: "商品发布人",
+        field: "mobile"
+    }, {
         field: 'name',
         title: '商品名称',
         readonly: view
     }, {
-        field: 'category',
+        field: 'categoryName',
         title: '大类',
-        type: 'select',
-        data: typeData,
-        search: true
+        readonly: view
     }, {
-        field: 'type',
+        field: 'typeName',
         title: '小类',
-        type: 'select',
-        data: typeData,
+        readonly: view
     }, {
         title: "原价",
         field: "originalPrice",

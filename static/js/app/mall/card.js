@@ -15,6 +15,10 @@ $(function() {
         keyName: "userId",
         valueName: "loginName",
         searchName: "loginName",
+        params: {
+            updater: "",
+            kind: "C",
+        },
         search: true,
         visible: false
     }, {
@@ -28,7 +32,7 @@ $(function() {
     }, {
         field: 'parValue',
         title: '面值',
-        formatter:moneyFormat
+        formatter: moneyFormat
     }, {
         title: '有效期开始时间',
         field: 'startDatetime',

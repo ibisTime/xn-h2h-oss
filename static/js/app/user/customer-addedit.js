@@ -13,21 +13,20 @@ $(function() {
         field: "nickname",
         readonly: view
     }, {
-        field: 'idKind',
-        title: '证件类型',
-        type: 'select',
-        readonly: view,
-        data: { '1': '身份证' }
-    }, {
-        field: 'idNo',
-        title: '证件号',
-        readonly: view,
-        maxlength: 30
-    }, {
         field: 'realName',
         title: '真实姓名',
         readonly: view,
         maxlength: 10
+    }, {
+        title: "性别",
+        field: "gender",
+        type: "select",
+        data: {
+            "0": "未知",
+            "1": "男",
+            "2": "女"
+        },
+        readonly: view,
     }, {
         field: 'userReferee',
         title: '推荐人',

@@ -25,13 +25,13 @@ $(function() {
     });
 
     $("#CNYls-Btn").click(function() {
-        location.href = "ledger.html?accountNumber=" + accountNumberCNY;
+        location.href = "ledger.html?accountNumber=" + accountNumberCNY + "&kind=CNY";
     });
     $("#JFls-Btn").click(function() {
-        location.href = "ledger.html?accountNumber=" + accountNumberJF;
+        location.href = "ledger.html?accountNumber=" + accountNumberJF + "&kind=JF";
     });
     $("#accoutGrantBtn").click(function() {
-        location.href = "ledger.html?accountNumber=" + accountNumberTG;
+        location.href = "ledger.html?accountNumber=" + accountNumberTG + "&kind=TG";
     });
     $("#accouBtn").click(function() {
         window.location.href = 'account_enchashment.html?accountNumber=' + accountNumberTG;

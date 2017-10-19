@@ -12,10 +12,6 @@ $(function() {
         field: 'nickname',
         title: '昵称',
     }, {
-        field: 'idNo',
-        title: '证件号码',
-        search: true
-    }, {
         title: "推荐人",
         field: "tj",
         formatter: function(v, data) {
@@ -32,7 +28,7 @@ $(function() {
         pageCode: "805120",
         params: {
             kind: 'C',
-            update: ""
+            updater: ""
         },
         keyName: "userId",
         valueName: "{{mobile.DATA}}--{{nickname.DATA}}",

@@ -1,3 +1,26 @@
+Date.prototype.format = function(format) {
+    var o = {
+        'M+': this.getMonth() + 1, //month
+        'd+': this.getDate(), //day
+        'H+': this.getHours(), //hour
+        'm+': this.getMinutes(), //minute
+        's+': this.getSeconds(), //second
+        'q+': Math.floor((this.getMonth() + 3) / 3), //quarter
+        'S': this.getMilliseconds() //millisecond
+    };
+    if (/(y+)/.test(format)) {
+        format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+    }
+    for (var k in o) {
+        if (new RegExp('(' + k + ')').test(format)) {
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
+                o[k] :
+                ('00' + o[k]).substr(('' + o[k]).length));
+        }
+    }
+    return format;
+};
+
 /**
  * 日期格式转化
  * @param date
@@ -13,26 +36,7 @@ function dateFormat(date, format) {
     }
 
     date = new Date(date);
-    var o = {
-        'M+': date.getMonth() + 1, //month
-        'd+': date.getDate(), //day
-        'H+': date.getHours(), //hour
-        'm+': date.getMinutes(), //minute
-        's+': date.getSeconds(), //second
-        'q+': Math.floor((date.getMonth() + 3) / 3), //quarter
-        'S': date.getMilliseconds() //millisecond
-    };
-    if (/(y+)/.test(format)) {
-        format = format.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
-    }
-    for (var k in o) {
-        if (new RegExp('(' + k + ')').test(format)) {
-            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
-                o[k] :
-                ('00' + o[k]).substr(('' + o[k]).length));
-        }
-    }
-    return format;
+    return date.format(format);
 }
 
 function dateTimeFormat(date) {
@@ -41,26 +45,7 @@ function dateTimeFormat(date) {
     }
     format = "yyyy-MM-dd HH:mm:ss";
     date = new Date(date);
-    var o = {
-        'M+': date.getMonth() + 1, //month
-        'd+': date.getDate(), //day
-        'H+': date.getHours(), //hour
-        'm+': date.getMinutes(), //minute
-        's+': date.getSeconds(), //second
-        'q+': Math.floor((date.getMonth() + 3) / 3), //quarter
-        'S': date.getMilliseconds() //millisecond
-    };
-    if (/(y+)/.test(format)) {
-        format = format.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
-    }
-    for (var k in o) {
-        if (new RegExp('(' + k + ')').test(format)) {
-            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ?
-                o[k] :
-                ('00' + o[k]).substr(('' + o[k]).length));
-        }
-    }
-    return format;
+    return date.format(format);
 }
 
 /**
@@ -692,28 +677,22 @@ function buildList(options) {
     for (var i = 0, len = dateTimeList.length; i < len; i++) {
         (function(i) {
             var item = dateTimeList[i];
-            var start = {
-                elem: '#' + item.field1,
-                min: item.minDate1 ? item.minDate1 : '',
-                istime: item.type == 'datetime',
-                format: item.type == 'datetime' ? 'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD',
-                choose: function(datas) {
-                    end.min = datas; //开始日选好后，重置结束日的最小日期
-                    end.start = datas //将结束日的初始值设定为开始日
-                }
-            };
-            var end = {
-                elem: '#' + item.field2,
-                min: item.minDate2 ? item.minDate2 : '',
-                istime: item.type == 'datetime',
-                format: item.type == 'datetime' ? 'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD',
-                choose: function(datas) {
-                    start.max = datas; //结束日选好后，重置开始日的最大日期
-                }
-            };
-
-            laydate(start);
-            laydate(end);
+            $('#' + item.field1).click(function() {
+                var end = $('#' + item.field2).val();
+                var obj = {
+                    elem: '#' + item.field1
+                };
+                end && (obj.max = end);
+                laydate(obj);
+            });
+            $('#' + item.field2).click(function() {
+                var start = $('#' + item.field1).val();
+                var obj = {
+                    elem: '#' + item.field2
+                };
+                start && (obj.min = start);
+                laydate(obj);
+            });
         })(i);
     }
     // 单个日期搜索框
@@ -1498,11 +1477,9 @@ function buildDetail(options) {
         } else {
             laydate({
                 elem: '#' + item.field,
-                min: item.minDate ?
-                    item.minDate : '',
+                min: item.minDate ? item.minDate : '',
                 istime: item.type == 'datetime',
-                format: item.type == 'datetime' ?
-                    'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD'
+                format: item.type == 'datetime' ? 'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD'
             });
         }
     }

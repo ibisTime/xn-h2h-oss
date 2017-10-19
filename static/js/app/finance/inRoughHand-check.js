@@ -65,7 +65,6 @@ $(function() {
             field: 'currency',
             title: '币种',
             type: "select",
-            // keyCode: '802006',
             key: "currency",
             formatter: Dict.getNameForList("currency")
         }, {
