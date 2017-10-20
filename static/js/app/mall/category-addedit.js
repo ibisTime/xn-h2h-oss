@@ -12,6 +12,7 @@ $(function() {
         field: 'pic',
         type: 'img',
         single: true,
+        required: true,
         readonly: view,
     }, {
         field: 'orderNo',

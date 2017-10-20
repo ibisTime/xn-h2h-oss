@@ -15,9 +15,11 @@ $(function() {
         field: 'value1',
         title: "折扣率",
     }, {
-        field: 'description',
-        title: '活动图文详述',
-        type: "textarea",
+        title: "广告图",
+        field: "advPic",
+        formatter: function(v, data) {
+            return v && '<img  style="width:40px;height:40px" src="' + OSS.picBaseUrl + '/' + v + '" >' || "-"
+        }
     }, {
         title: '开始时间',
         field: 'startDatetime',
@@ -55,7 +57,6 @@ $(function() {
     buildList({
         columns: columns,
         pageCode: '801070',
-        deleteCode: '801061',
         beforeEdit: function(data) {
             if (data.status == "1") {
                 toastr.warning("上架中，不可修改");
@@ -65,6 +66,21 @@ $(function() {
         },
         searchParams: {
             companyCode: OSS.company
+        },
+        beforeDelete: function(data) {
+            if (data.status == "1") {
+                toastr.warning("上架中，不可删除");
+                return "";
+            };
+            confirm("确认删除？").then(function() {
+                reqApi({
+                    code: '801061',
+                    json: { "code": data.code }
+                }).then(function() {
+                    toastr.info("操作成功");
+                    $('#tableList').bootstrapTable('refresh', { url: $('#tableList').bootstrapTable('getOptions').url });
+                });
+            }, function() {});
         }
     });
     //上架

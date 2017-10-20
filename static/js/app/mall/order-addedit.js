@@ -98,6 +98,13 @@ $(function() {
             field: "promptTimes",
             readonly: true
         }, {
+            field: 'status',
+            title: '订单状态',
+            type: "select",
+            key: "order_status",
+            formatter: Dict.getNameForList("order_status"),
+            readonly: true
+        }, {
             field: 'remark',
             title: '备注',
             readonly: true

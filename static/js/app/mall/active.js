@@ -68,12 +68,15 @@ $(function() {
                 toastr.warning("上架中，不可修改");
                 return "";
             }
-            window.location.href = "./active_addedit.html?code=" + data.code;
+            window.location.href = "./active_addedit.html?code=" + data.code + "&type=" + data.type;
         },
         searchParams: {
             // type: "1",
             companyCode: OSS.company
-        }
+        },
+        beforeDetail: function(data) {
+            window.location.href = "./active_detail.html?&v=1&code=" + data.code + "&type=" + data.type;
+        },
     });
     //上架
     $('#upBtn').click(function() {

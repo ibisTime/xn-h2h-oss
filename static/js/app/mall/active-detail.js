@@ -35,15 +35,7 @@ $(function() {
         type: "select",
         key: "cz_active_type",
         required: true,
-        onChange: function(v, data) {
-            if (v == '3') {
-                $("#description2").parent().parent().css("display", "block");
-                $("#description").parent().parent().css("display", "none");
-            } else {
-                $("#description2").parent().parent().css("display", "none");
-                $("#description").parent().parent().css("display", "block");
-            };
-        }
+        readonly: view
     }, {
         field: 'currency',
         title: "赠送币种",
@@ -82,23 +74,23 @@ $(function() {
         readonly: view,
         afterSet: function(v, data) {
             if (type == '3') {
-                $("#description2").parent().parent().css("display", "block");
-                $("#description").parent().parent().css("display", "none");
+                $("#description2").parent().css("display", "block");
+                $("#description").parent().css("display", "none");
             } else {
-                $("#description2").parent().parent().css("display", "none");
-                $("#description").parent().parent().css("display", "block");
+                $("#description2").parent().css("display", "none");
+                $("#description").parent().css("display", "block");
             };
-            $("#description2").val(data.description);
+            return data.description;
         },
+        formatter: function(v, data) {
+            return data.description;
+        }
     }, {
         field: 'description',
         title: '活动图文详述',
         type: "textarea",
         required: true,
-        readonly: view,
-        // afterSet: function(v, data) {
-        //     $("#description1").val(data.description);
-        // }
+        readonly: view
     }, {
         title: "备注",
         field: "remark",
@@ -132,14 +124,6 @@ $(function() {
         addCode: '801040',
         editCode: '801042',
         view: view,
-        beforeSubmit: function(data) {
-            if (data.description == "" && data.description2) {
-                delete data.description;
-                data.description = data.description2;
-                delete data.description2
-            };
-            return data;
-        }
     });
 
 });

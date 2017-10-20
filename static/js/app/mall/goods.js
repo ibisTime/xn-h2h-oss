@@ -38,11 +38,7 @@ $(function() {
                 });
             }
         },
-        search: true,
-        visible: false
-    }, {
-        field: 'categoryName',
-        title: '大类',
+        search: true
     }, {
         field: 'type',
         title: '小类',
@@ -55,11 +51,7 @@ $(function() {
         keyName: 'code',
         valueName: 'name',
         searchName: 'name',
-        search: true,
-        visible: false
-    }, {
-        field: 'typeName',
-        title: '小类',
+        search: true
     }, {
         title: "原价",
         field: "originalPrice",
@@ -128,7 +120,7 @@ $(function() {
             return;
         };
 
-        if (selRecords[0].status != 1 && selRecords[0].status != 4) {
+        if (selRecords[0].status != 5 && selRecords[0].status != 6) {
             toastr.info("该商品状态不可上架");
             return;
         };
@@ -167,7 +159,7 @@ $(function() {
         }
         confirm("确认强制下架？").then(function() {
             reqApi({
-                code: '808014',
+                code: '808017',
                 json: { "code": selRecords[0].code, remark: "强制下架" }
             }).then(function() {
                 toastr.info("操作成功");

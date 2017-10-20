@@ -66,6 +66,13 @@ $(function() {
         readonly: view,
         required: true
     }, {
+        title: "广告图",
+        field: "advPic",
+        type: "img",
+        single: true,
+        readonly: view,
+        required: true
+    }, {
         field: 'description',
         title: '活动图文详述',
         type: "textarea",
