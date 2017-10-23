@@ -1,12 +1,21 @@
 $(function() {
-
+    var customer = getQueryString('c') || "";
+    var userId = getQueryString('userId') || "";
+    var mobile = getQueryString('mobile') || "";
     var columns = [{
         field: '',
         title: '',
         checkbox: true
     }, {
         title: "商品发布人",
-        field: "mobile"
+        field: "mobile",
+        formatter: function(v, data) {
+            if (v == undefined) {
+                return mobile;
+            } else {
+                return v;
+            }
+        }
     }, {
         field: 'name',
         title: '商品名称',
@@ -102,9 +111,11 @@ $(function() {
 
     buildList({
         columns: columns,
-        pageCode: '808025',
+        pageCode: userId ? '808021' : '808025',
         searchParams: {
-            companyCode: OSS.company
+            companyCode: OSS.company,
+            userId: userId,
+            statusList: userId ? [3, 4] : '',
         }
     });
     //上架
@@ -168,5 +179,24 @@ $(function() {
         }, function() {});
 
     });
+    //评论查询
+    $('#commentBtn').click(function() {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        };
 
+        if (selRecords.length > 1) {
+            toastr.info("不能多选");
+            return;
+        };
+        window.location.href = "./goodsCommentQuery.html?entityCode=" + selRecords[0].code;
+    });
+    if (customer) {
+        $(".tools .toolbar").html('<li style="display:block;" id="backBtn"><span><img src="/static/images/t01.png"></span>返回</li>');
+    };
+    $("#backBtn").click(function() {
+        window.location.href = '../user/customer.html'
+    });
 });

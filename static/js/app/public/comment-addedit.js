@@ -1,7 +1,19 @@
 $(function() {
-
+    var entityCode = getQueryString('entityCode');
+    var entityName;
     var code = getQueryString('code');
     var view = getQueryString('v');
+    reqApi({
+        code: "808026",
+        json: {
+            code: entityCode,
+            updater: ""
+        },
+        sync: true
+    }).then(function(data) {
+        entityName = data.name;
+    });
+    console.log(entityName);
     var remarkNote = [{
         title: "审核说明",
         field: 'remark',
@@ -36,9 +48,9 @@ $(function() {
             field: 'entityName',
             formatter: function(v, data) {
                 if (v) {
-                    return "商品：" + v;
+                    return "订单：" + data.orderCode;
                 } else {
-                    return "订单：" + data.entityCode;
+                    return "商品：" + entityName;
                 }
             }
         },

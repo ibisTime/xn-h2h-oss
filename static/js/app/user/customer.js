@@ -128,27 +128,26 @@ $(function() {
         }
         window.location.href = "customer_account.html?&c=1&userId=" + selRecords[0].userId;
     });
-
+    //商品
+    $('#goodsBtn').click(function() {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        }
+        window.location.href = "../mall/goods.html?&c=1&userId=" + selRecords[0].userId + "&mobile=" + selRecords[0].mobile;
+    });
     //查看推荐关系
-    $('#userRefereeBtn').click(function() {
-        var selRecords = $('#tableList').bootstrapTable('getSelections');
-        if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
-            return;
-        }
+    // $('#userRefereeBtn').click(function() {
+    //     var selRecords = $('#tableList').bootstrapTable('getSelections');
+    //     if (selRecords.length <= 0) {
+    //         toastr.info("请选择记录");
+    //         return;
+    //     }
 
-        window.location.href = "customer_userReferee.html?userId=" + selRecords[0].userId + "&mobile=" + selRecords[0].mobile;
-    });
+    //     window.location.href = "customer_userReferee.html?userId=" + selRecords[0].userId + "&mobile=" + selRecords[0].mobile;
+    // });
 
 
-    //修改实名认证
-    $('#identityBtn').click(function() {
-        var selRecords = $('#tableList').bootstrapTable('getSelections');
-        if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
-            return;
-        }
 
-        window.location.href = "bizman_identity.html?userId=" + selRecords[0].userId;
-    });
 });

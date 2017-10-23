@@ -1,5 +1,4 @@
 $(function() {
-
     var code = getQueryString('code');
 
     var fields = [{
@@ -123,21 +122,26 @@ $(function() {
             title: '物流单号',
             field: 'logisticsCode',
             readonly: true,
-            // formatter: function(v, data) {
-            //     if (v) {
-            //         return v
-            //     } else {
-            //         $("#logisticsCompany").parent().hide();
-            //         $("#logisticsCode").parent().hide();
-            //         $("#deliverer").parent().hide();
-            //         $("#deliveryDatetime").parent().hide();
-            //         $("#pdf").parent().hide();
-            //     }
-            // }
+            formatter: function(v, data) {
+                if (v) {
+                    return v
+                } else {
+                    $("#logisticsCompany").parent().hide();
+                    $("#logisticsCode").parent().hide();
+                    $("#deliverer").parent().hide();
+                    $("#deliveryDatetime").parent().hide();
+                    $("#pdf").parent().hide();
+                }
+            }
         }, {
             field: 'deliverer',
             title: '发货人',
             readonly: true,
+            formatter: function(v, data) {
+                if (data.companyUser) {
+                    return data.companyUser.mobile;
+                }
+            }
         }, {
             field: 'deliveryDatetime',
             title: '发货时间',

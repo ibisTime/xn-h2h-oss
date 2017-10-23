@@ -9,13 +9,12 @@ $(function() {
         title: '针对内容',
         field: 'entityName',
         formatter: function(v, data) {
-                if (v) {
-                    return "商品：" + v;
-                } else {
-                    return "订单：" + data.entityCode;
-                }
+            if (v) {
+                return "订单：" + data.orderCode;
+            } else {
+                return "商品：" + data.productName;
             }
-            // search: true
+        }
     }, {
         field: 'content',
         title: '评论内容'
@@ -57,11 +56,14 @@ $(function() {
     }];
     buildList({
         columns: columns,
-        pageCode: "801025",
+        pageCode: "808960",
         deleteCode: "801022",
         searchParams: {
             companyCode: OSS.company,
             status: "D"
+        },
+        beforeDetail: function(data) {
+            window.location.href = "./comment_addedit.html?v=1&code=" + data.code + "&entityCode=" + data.entityCode;
         },
         //审核
         beforeEdit: function(data) {

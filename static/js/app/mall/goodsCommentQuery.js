@@ -1,4 +1,5 @@
 $(function() {
+    var entityCode = getQueryString('entityCode') || "";
 
     var columns = [{
         field: '',
@@ -43,11 +44,12 @@ $(function() {
         // pageCode: "801025",
         pageCode: "808960",
         searchParams: {
-            companyCode: OSS.company
-        },
-        beforeDetail: function(data) {
-            window.location.href = "./comment_addedit.html?v=1&code=" + data.code + "&entityCode=" + data.entityCode;
+            companyCode: OSS.company,
+            entityCode: entityCode
         }
     });
-
+    $(".tools .toolbar").html('<li style="display:block;" id="backBtn"><span><img src="/static/images/t01.png"></span>返回</li>');
+    $("#backBtn").click(function() {
+        window.location.href = './goods.html'
+    });
 })
