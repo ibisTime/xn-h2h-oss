@@ -1,21 +1,14 @@
 $(function() {
     var customer = getQueryString('c') || "";
     var userId = getQueryString('userId') || "";
-    var mobile = getQueryString('mobile') || "";
+
     var columns = [{
         field: '',
         title: '',
         checkbox: true
     }, {
         title: "商品发布人",
-        field: "mobile",
-        formatter: function(v, data) {
-            if (v == undefined) {
-                return mobile;
-            } else {
-                return v;
-            }
-        }
+        field: "mobile"
     }, {
         field: 'name',
         title: '商品名称',
@@ -111,10 +104,10 @@ $(function() {
 
     buildList({
         columns: columns,
-        pageCode: userId ? '808021' : '808025',
+        pageCode: '808025',
         searchParams: {
             companyCode: OSS.company,
-            userId: userId,
+            storeCode: userId,
             statusList: userId ? [3, 4] : '',
         }
     });

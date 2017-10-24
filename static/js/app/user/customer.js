@@ -135,18 +135,28 @@ $(function() {
             toastr.info("请选择记录");
             return;
         }
-        window.location.href = "../mall/goods.html?&c=1&userId=" + selRecords[0].userId + "&mobile=" + selRecords[0].mobile;
+        window.location.href = "../mall/goods.html?&c=1&userId=" + selRecords[0].userId;
     });
-    //查看推荐关系
-    // $('#userRefereeBtn').click(function() {
-    //     var selRecords = $('#tableList').bootstrapTable('getSelections');
-    //     if (selRecords.length <= 0) {
-    //         toastr.info("请选择记录");
-    //         return;
-    //     }
+    //卖出的商品
+    $('#sellOrderBtn').click(function() {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        }
 
-    //     window.location.href = "customer_userReferee.html?userId=" + selRecords[0].userId + "&mobile=" + selRecords[0].mobile;
-    // });
+        window.location.href = "../mall/order.html?&c=1&toUser=" + selRecords[0].userId;
+    });
+    //购买的商品
+    $('#buyOrderBtn').click(function() {
+        var selRecords = $('#tableList').bootstrapTable('getSelections');
+        if (selRecords.length <= 0) {
+            toastr.info("请选择记录");
+            return;
+        }
+
+        window.location.href = "../mall/order.html?&c=1&applyUser=" + selRecords[0].userId;
+    });
 
 
 

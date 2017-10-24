@@ -25,8 +25,8 @@ $(function() {
     }, {
         title: '图片',
         field: 'pic',
-        type: 'img',
-        single: true,
+        value: "0",
+        hidden: true,
         readonly: view,
     }, {
         field: 'orderNo',
