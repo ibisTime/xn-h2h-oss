@@ -17,7 +17,7 @@ $(function() {
         type: 'select',
         key: 'currency',
         formatter: Dict.getNameForList("currency"),
-        search: true
+        // search: true
     }, {
         field: 'amount',
         title: '充值金额',

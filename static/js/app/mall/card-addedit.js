@@ -65,6 +65,11 @@ $(function() {
         readonly: view,
         required: true
     }, {
+        title: "备注",
+        field: "remark",
+        maxlength: 255,
+        readonly: view
+    }, {
         field: "releaser",
         value: getUserName(),
         hidden: true,

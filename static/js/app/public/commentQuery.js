@@ -8,10 +8,11 @@ $(function() {
         title: '针对内容',
         field: 'entityName',
         formatter: function(v, data) {
+            var productName = data.productName ? data.productName : "该商品已被卖家删除";
             if (v) {
                 return "订单：" + data.orderCode;
             } else {
-                return "商品：" + data.productName;
+                return "商品：" + productName;
             }
         }
     }, {

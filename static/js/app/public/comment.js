@@ -9,31 +9,16 @@ $(function() {
         title: '针对内容',
         field: 'entityName',
         formatter: function(v, data) {
+            var productName = data.productName ? data.productName : "该商品已被卖家删除";
             if (v) {
                 return "订单：" + data.orderCode;
             } else {
-                return "商品：" + data.productName;
+                return "商品：" + productName;
             }
         }
     }, {
         field: 'content',
         title: '评论内容'
-    }, {
-        title: "星级",
-        field: "score",
-        formatter: function(v, data) {
-            if (v == 1) {
-                return "1颗星"
-            } else if (v == 2) {
-                return "2颗星"
-            } else if (v == 3) {
-                return "3颗星"
-            } else if (v == 4) {
-                return "4颗星"
-            } else if (v == 5) {
-                return "5颗星"
-            }
-        },
     }, {
         field: 'status',
         title: '状态',

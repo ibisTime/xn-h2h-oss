@@ -13,7 +13,6 @@ $(function() {
     }).then(function(data) {
         entityName = data.name;
     });
-    console.log(entityName);
     var remarkNote = [{
         title: "审核说明",
         field: 'remark',
@@ -50,7 +49,12 @@ $(function() {
                 if (v) {
                     return "订单：" + data.orderCode;
                 } else {
-                    return "商品：" + entityName;
+                    if (entityName == undefined) {
+                        return "商品：该商品已被删除";
+                    } else {
+                        return "商品：" + entityName;
+                    }
+
                 }
             }
         },

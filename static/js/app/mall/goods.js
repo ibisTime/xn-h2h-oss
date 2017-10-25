@@ -111,25 +111,7 @@ $(function() {
             statusList: userId ? [3, 4] : '',
         }
     });
-    //上架
-    $('#upBtn').click(function() {
-        var selRecords = $('#tableList').bootstrapTable('getSelections');
-        if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
-            return;
-        };
 
-        if (selRecords.length > 1) {
-            toastr.info("不能多选");
-            return;
-        };
-
-        if (selRecords[0].status != 5 && selRecords[0].status != 6) {
-            toastr.info("该商品状态不可上架");
-            return;
-        };
-        window.location.href = "./goods_up.html?code=" + selRecords[0].code;
-    });
     //热门设置
     $('#hotBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');

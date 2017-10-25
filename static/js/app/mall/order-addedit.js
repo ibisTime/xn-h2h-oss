@@ -130,7 +130,6 @@ $(function() {
                     $("#logisticsCode").parent().hide();
                     $("#deliverer").parent().hide();
                     $("#deliveryDatetime").parent().hide();
-                    $("#pdf").parent().hide();
                 }
             }
         }, {
@@ -147,11 +146,6 @@ $(function() {
             title: '发货时间',
             formatter: dateTimeFormat,
             readonly: true,
-        }, {
-            field: 'pdf',
-            title: '物流单',
-            type: "img",
-            readonly: true
         }, {
             title: "评论信息",
             type: "title"

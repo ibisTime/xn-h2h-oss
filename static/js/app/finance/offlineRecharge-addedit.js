@@ -15,7 +15,7 @@ $(function() {
             ['type', 'account_type']
         ],
         params: {
-            currency: '',
+            currency: 'CNY',
             userId: userId
         },
         keyName: 'accountNumber',

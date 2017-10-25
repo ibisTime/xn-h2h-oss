@@ -157,7 +157,4 @@ $(function() {
 
         window.location.href = "../mall/order.html?&c=1&applyUser=" + selRecords[0].userId;
     });
-
-
-
 });
