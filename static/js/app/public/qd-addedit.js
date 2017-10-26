@@ -3,7 +3,7 @@ $(function() {
     reqApi({
         code: '805917',
         json: {
-            ckey: 'qiandao'
+            ckey: 'signRegulation'
         },
         sync: true
     }).then(function(data) {
