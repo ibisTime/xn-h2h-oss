@@ -1,5 +1,6 @@
 $(function() {
     var view = getQueryString('v');
+    var type = getQueryString('type');
     var code = getQueryString('code');
     var start = {
         elem: '#startDatetime',
@@ -28,29 +29,31 @@ $(function() {
             start.max = datas;
         }
     };
+
     var fields = [{
-        title: "优惠活动类型",
+        title: "活动类型",
         field: "type",
         type: "select",
-        key: "yh_active_type",
-        readonly: view,
+        data: {
+            "3": "邀请好友送活动"
+        },
+        // key: "cz_active_type",
         required: true,
-        onChange: function(v, data) {
-            if (v) {
-                if (v != "1") {
-                    $("#value1").parent().css("display", "none");
-                } else {
-                    $("#value1").parent().css("display", "block");
-                }
-            }
-        }
+        value: "3"
     }, {
-        field: 'value1',
-        title: "折扣率",
-        twoAmount: true,
+        field: 'currency',
+        title: "赠送币种",
+        type: "select",
+        key: "currency",
         required: true,
+        readonly: view
+    }, {
+        title: '赠送的数量',
+        field: 'number',
+        required: true,
+        amount: true,
         readonly: view,
-        help: "请输入一个最小为0，最大为1，<br>并且最多有两位小数的值，如：0.66"
+        formatter: moneyFormat
     }, {
         title: '开始时间',
         field: 'startDatetime',
@@ -68,18 +71,12 @@ $(function() {
         readonly: view,
         required: true
     }, {
-        title: "广告图",
-        field: "advPic",
-        type: "img",
-        single: true,
-        readonly: view,
-        required: true
-    }, {
         field: 'description',
-        title: '活动图文详述',
+        title: '活动详述',
+        normalArea: true,
         type: "textarea",
         required: true,
-        readonly: view
+        readonly: view,
     }, {
         title: "备注",
         field: "remark",
@@ -93,12 +90,6 @@ $(function() {
         formatter: Dict.getNameForList("czActive_status"),
         readonly: view
     }, {
-        title: "位置",
-        field: "location",
-        type: "select",
-        key: "active_location",
-        readonly: view
-    }, {
         title: "UI次序",
         field: "orderNo",
         readonly: view
@@ -109,18 +100,10 @@ $(function() {
     buildDetail({
         fields: fields,
         code: code,
-        detailCode: '801071',
-        addCode: '801060',
-        editCode: '801062',
+        detailCode: '801051',
+        addCode: '801040',
+        editCode: '801042',
         view: view,
-        beforeSubmit: function(data) {
-            if (data.value1 == "") {
-                data.value1 = "1";
-            }
-            data.value2 = "0";
-            data.value3 = "0";
-            return data;
-        }
     });
 
 });

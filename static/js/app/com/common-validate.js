@@ -150,7 +150,10 @@ jQuery.validator.addMethod("isNotFace", function(value, element) {
 $.validator.addMethod("minAmount", function(value, element) {
     return this.optional(element) || /^\d+(\.\d{1})?$/.test(value);
 }, '金额必须>0，且小数点后最多1位');
-
+//数值在0和1之间，且最多两位小数
+$.validator.addMethod("twoAmount", function(value, element) {
+    return this.optional(element) || /^0$|^0[.]\d{0,2}$|^1$|^1[.]0{0,2}$/g.test(value);
+}, '请输入一个在0和1之间，且最多两位小数的值，如：0.66');
 
 //ie6兼容after
 var $beforeAfter = function(dom) {

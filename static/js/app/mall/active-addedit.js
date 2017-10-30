@@ -7,7 +7,7 @@ $(function() {
         format: 'YYYY-MM-DD hh:mm:ss',
         min: laydate.now(),
         istime: true,
-
+        istoday: false,
         choose: function(datas) {
             var d = new Date(datas);
             d.setDate(d.getDate());
@@ -21,6 +21,7 @@ $(function() {
         format: 'YYYY-MM-DD hh:mm:ss',
         min: laydate.now(),
         istime: true,
+        istoday: false,
         choose: function(datas) {
             var d = new Date(datas);
             d.setDate(d.getDate());
@@ -33,17 +34,11 @@ $(function() {
         title: "活动类型",
         field: "type",
         type: "select",
-        key: "cz_active_type",
+        data: {
+            "4": "充值送活动"
+        },
         required: true,
-        onChange: function(v, data) {
-            if (v == '3') {
-                $("#description2").parent().parent().css("display", "block");
-                $("#description").parent().parent().css("display", "none");
-            } else {
-                $("#description2").parent().parent().css("display", "none");
-                $("#description").parent().parent().css("display", "block");
-            };
-        }
+        value: "4"
     }, {
         field: 'currency',
         title: "赠送币种",
@@ -55,8 +50,9 @@ $(function() {
         title: '赠送的数量',
         field: 'number',
         required: true,
-        number: true,
+        amount: true,
         readonly: view,
+        formatter: moneyFormat
     }, {
         title: '开始时间',
         field: 'startDatetime',
@@ -74,31 +70,12 @@ $(function() {
         readonly: view,
         required: true
     }, {
-        field: 'description2',
-        title: '活动详述',
-        type: "textarea",
-        normalArea: true,
-        required: true,
-        readonly: view,
-        afterSet: function(v, data) {
-            if (type == '3') {
-                $("#description2").parent().parent().css("display", "block");
-                $("#description").parent().parent().css("display", "none");
-            } else {
-                $("#description2").parent().parent().css("display", "none");
-                $("#description").parent().parent().css("display", "block");
-            };
-            $("#description2").val(data.description);
-        },
-    }, {
         field: 'description',
         title: '活动图文详述',
-        type: "textarea",
+        value: "0",
+        type: "hidden",
         required: true,
         readonly: view,
-        // afterSet: function(v, data) {
-        //     $("#description1").val(data.description);
-        // }
     }, {
         title: "备注",
         field: "remark",

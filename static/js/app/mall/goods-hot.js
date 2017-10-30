@@ -30,7 +30,7 @@ $(function() {
 
     $("#subBtn").off("click").click(function() {
         if ($('#jsForm').valid()) {
-            confirm("确认上架？").then(function() {
+            confirm("确认设置为热门？").then(function() {
                 var data = $('#jsForm').serializeObject();
                 data.code = code;
                 data.remark = $("#remark").val();

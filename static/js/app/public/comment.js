@@ -41,7 +41,7 @@ $(function() {
     }];
     buildList({
         columns: columns,
-        pageCode: "808960",
+        pageCode: "801025",
         deleteCode: "801022",
         searchParams: {
             companyCode: OSS.company,
@@ -53,7 +53,7 @@ $(function() {
         //审核
         beforeEdit: function(data) {
             if (data.status == "D") {
-                window.location.href = 'comment_addedit.html?code=' + data.code;
+                window.location.href = 'comment_addedit.html?code=' + data.code + "&entityCode=" + data.entityCode;
             } else {
                 toastr.warning("不是待审核的状态")
             }

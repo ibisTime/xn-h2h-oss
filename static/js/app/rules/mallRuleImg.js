@@ -13,17 +13,22 @@ $(function() {
         search: true
     }, {
         field: 'cvalue',
-        title: '数值'
+        title: '图片',
+        formatter: function(v, data) {
+            if (v) {
+                return v && '<img style="width:306px;height:84px;" src="' + OSS.picBaseUrl + "/" + v + '">'
+            }
+        }
     }];
     buildList({
         columns: columns,
         pageCode: '808915',
         searchParams: {
-            type: '1',
+            type: 'img',
             companyCode: OSS.company
         },
         beforeEdit: function(r) {
-            location.href = 'mallRule_addedit.html?code=' + r.id + "&t=" + r.type;
+            location.href = 'mallRuleImg_addedit.html?code=' + r.id + "&t=" + r.type;
         }
     });
 });

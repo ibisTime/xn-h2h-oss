@@ -15,7 +15,8 @@ $(function() {
         formatter: Dict.getNameForList("category_status"),
     }, {
         field: 'orderNo',
-        title: '次序'
+        title: '次序',
+        sortable: true
     }];
 
     buildList({

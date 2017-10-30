@@ -47,7 +47,7 @@ $(function() {
         title: '赠送的数量',
         field: 'number',
         required: true,
-        number: true,
+        formatter: moneyFormat,
         readonly: view,
     }, {
         title: '开始时间',

@@ -64,8 +64,10 @@ $(function() {
             field: 'payAmount3',
             title: '实际支付总额',
             formatter: function(v, data) {
-                if (v != "0" && data.payAmount1 != "0" && data.payAmount2 != "0") {
+                if (v != "0" && data.payAmount1 != "0" && data.payAmount2 != undefined && data.payAmount2 != "0") {
                     return "人民币：" + moneyFormat(data.payAmount1) + "，积分：" + moneyFormat(data.payAmount2) + "，优惠券：" + moneyFormat(data.payAmount3)
+                } else if (v != "0" && data.payAmount1 != "0" && data.payAmount2 == undefined) {
+                    return "人民币：" + moneyFormat(data.payAmount1) + "，优惠券：" + moneyFormat(data.payAmount3)
                 } else if (v == "0" && data.payAmount1 != "0" && data.payAmount2 != "0") {
                     return "人民币：" + moneyFormat(data.payAmount1) + "，积分：" + moneyFormat(data.payAmount2);
                 } else if (v != "0" && data.payAmount1 != "0" && data.payAmount2 == "0") {
@@ -93,9 +95,8 @@ $(function() {
             key: "pay_type",
             readonly: true
         }, {
-            title: "催货次数",
             field: "promptTimes",
-            readonly: true
+            title: "催货次数"
         }, {
             field: 'status',
             title: '订单状态',

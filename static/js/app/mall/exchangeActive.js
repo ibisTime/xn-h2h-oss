@@ -5,21 +5,23 @@ $(function() {
         title: '',
         checkbox: true
     }, {
-        title: "优惠活动类型",
+        title: "活动类型",
         field: "type",
         type: "select",
-        key: "yh_active_type",
-        formatter: Dict.getNameForList("yh_active_type"),
+        key: "cz_active_type",
+        formatter: Dict.getNameForList("cz_active_type"),
+        // search: true
+    }, {
+        field: 'currency',
+        title: "赠送币种",
+        type: "select",
+        key: "currency",
+        formatter: Dict.getNameForList("currency"),
         search: true
     }, {
-        field: 'value1',
-        title: "折扣率",
-    }, {
-        title: "广告图",
-        field: "advPic",
-        formatter: function(v, data) {
-            return v && '<img  style="width:40px;height:40px" src="' + OSS.picBaseUrl + '/' + v + '" >' || "-"
-        }
+        title: '赠送的比例',
+        field: 'number',
+        formatter: moneyFormat,
     }, {
         title: '开始时间',
         field: 'startDatetime',
@@ -40,12 +42,6 @@ $(function() {
         formatter: Dict.getNameForList("czActive_status"),
         search: true
     }, {
-        field: 'location',
-        title: '位置',
-        type: 'select',
-        key: "active_location",
-        formatter: Dict.getNameForList("active_location")
-    }, {
         field: 'orderNo',
         title: 'UI次序'
     }, {
@@ -55,32 +51,20 @@ $(function() {
 
     buildList({
         columns: columns,
-        pageCode: '801070',
+        pageCode: '801050',
+        deleteCode: '801041',
         beforeEdit: function(data) {
             if (data.status == "1") {
                 toastr.warning("上架中，不可修改");
                 return "";
             }
-            window.location.href = "./joinActive_addedit.html?code=" + data.code;
+            window.location.href = "./exchangeActive_addedit.html?code=" + data.code + "&type=" + data.type;
         },
         searchParams: {
+            type: "5",
             companyCode: OSS.company
         },
-        beforeDelete: function(data) {
-            if (data.status == "1") {
-                toastr.warning("上架中，不可删除");
-                return "";
-            };
-            confirm("确认删除？").then(function() {
-                reqApi({
-                    code: '801061',
-                    json: { "code": data.code }
-                }).then(function() {
-                    toastr.info("操作成功");
-                    $('#tableList').bootstrapTable('refresh', { url: $('#tableList').bootstrapTable('getOptions').url });
-                });
-            }, function() {});
-        }
+
     });
     //上架
     $('#upBtn').click(function() {
@@ -99,7 +83,7 @@ $(function() {
             toastr.warning("该记录不是可上架的状态");
             return;
         }
-        window.location.href = "joinActive_up.html?Code=" + selRecords[0].code;
+        window.location.href = "active_up.html?Code=" + selRecords[0].code;
     });
     //下架
     $('#downBtn').click(function() {
@@ -120,7 +104,7 @@ $(function() {
         }
         confirm("确认下架？").then(function() {
             reqApi({
-                code: '801064',
+                code: '801044',
                 json: { "code": selRecords[0].code, remark: "下架" }
             }).then(function() {
                 toastr.info("操作成功");

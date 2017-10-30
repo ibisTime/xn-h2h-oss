@@ -5,6 +5,7 @@ $(function() {
         elem: '#startDatetime',
         format: 'YYYY-MM-DD hh:mm:ss',
         min: laydate.now(),
+        // istoday: false,
         istime: true,
         choose: function(datas) {
             var d = new Date(datas);
@@ -19,6 +20,7 @@ $(function() {
         format: 'YYYY-MM-DD hh:mm:ss',
         min: laydate.now(),
         istime: true,
+        // istoday: false,
         choose: function(datas) {
             var d = new Date(datas);
             d.setDate(d.getDate());
@@ -41,6 +43,13 @@ $(function() {
         },
         required: true,
         readonly: view
+    }, {
+        title: "获取人",
+        field: "userName",
+        readonly: view,
+        formatter: function(v, data) {
+            return data.user.mobile;
+        }
     }, {
         field: 'parValue',
         title: "面值",
@@ -85,6 +94,7 @@ $(function() {
     if (view) {
         fields = fields.concat(viewList);
     }
+
     buildDetail({
         fields: fields,
         code: code,
@@ -92,5 +102,9 @@ $(function() {
         addCode: "801110",
         view: view
     });
-
+    if (view) {
+        $("#toUser").parent().css("display", "none");
+    } else {
+        $("#userName").parent().css("display", "none");
+    }
 });

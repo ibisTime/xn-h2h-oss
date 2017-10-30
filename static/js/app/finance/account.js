@@ -3,25 +3,21 @@ $(function() {
     var accountNumberJF;
     var accountNumberTG;
     reqApi({
-        code: '802503',
+        code: '802500',
         json: {
-            userId: getUserId()
+            "start": 1,
+            "limit": 10,
+            "type": "P"
         }
     }).done(function(data) {
-        $("#amount-CNY").text("￥" + moneyFormat(data[0].amount));
+        var data = data.list;
+        console.log(data)
+        $("#amount-CNY").text("￥" + moneyFormat(data[1].amount));
         accountNumberCNY = data[0].accountNumber;
-        $("#amount-JF").text(moneyFormat(data[1].amount));
+        $("#amount-JF").text(moneyFormat(data[0].amount));
         accountNumberJF = data[1].accountNumber;
-    });
-
-    reqApi({
-        code: '802503',
-        json: {
-            userId: OSS.SYS_USER + "_TG"
-        }
-    }).then(function(data) {
-        $("#amount-TG").text("￥" + moneyFormat(data[0].amount));
-        accountNumberTG = data[0].accountNumber;
+        $("#amount-TG").text("￥" + moneyFormat(data[2].amount));
+        accountNumberTG = data[2].accountNumber;
     });
 
     $("#CNYls-Btn").click(function() {

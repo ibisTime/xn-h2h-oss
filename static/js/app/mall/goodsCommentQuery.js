@@ -39,10 +39,9 @@ $(function() {
         formatter: dateTimeFormat
     }];
     buildList({
-        router: "comment",
         columns: columns,
-        // pageCode: "801025",
-        pageCode: "808960",
+        pageCode: "801025",
+        // pageCode: "808960",
         searchParams: {
             companyCode: OSS.company,
             entityCode: entityCode

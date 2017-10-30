@@ -8,8 +8,11 @@ $(function() {
         title: '',
         checkbox: true
     }, {
-        field: 'code',
+        field: 'codeForQuery',
         title: '订单编号',
+        formatter: function(v, data) {
+            return data.code;
+        },
         search: true
     }, {
         field: 'applyUser',
@@ -38,7 +41,6 @@ $(function() {
             } else {
                 return ""
             }
-
         }
     }, {
         title: "商品发布人",
@@ -50,7 +52,7 @@ $(function() {
         }
     }, {
         field: 'payType',
-        title: '买单方式',
+        title: '支付方式',
         key: 'pay_type',
         formatter: Dict.getNameForList("pay_type"),
         type: 'select',
@@ -72,6 +74,9 @@ $(function() {
         field: "reMobile",
         search: true
     }, {
+        field: "promptTimes",
+        title: "催货次数"
+    }, {
         field: 'applyDatetime',
         title: '下单时间',
         formatter: dateTimeFormat,
@@ -85,10 +90,10 @@ $(function() {
         field: "payDatetime",
         title: "支付时间",
         formatter: dateTimeFormat,
-        field1: 'payDateTimeStart',
+        field1: 'payDatetimeStart',
         title1: '支付时间',
         type: 'date',
-        field2: 'payDateTimeEnd',
+        field2: 'payDatetimeEnd',
         twoDate: true,
         search: true,
     }, {

@@ -2,7 +2,13 @@ $(function() {
     var view = getQueryString('v');
     var code = getQueryString('code');
 
-    var fields = [{
+    var fields = [view ? {
+        title: "父类",
+        field: "parentName",
+        formatter: function(v, data) {
+            return data.parentName;
+        }
+    } : {
         field: "parentCode",
         title: "父类",
         type: "select",
@@ -16,7 +22,8 @@ $(function() {
         valueName: "name",
         searchName: "name",
         required: true,
-        readonly: view
+        readonly: view,
+
     }, {
         field: 'name',
         title: '小类名称',
@@ -33,7 +40,10 @@ $(function() {
         title: '次序',
         required: true,
         number: true,
-        readonly: view
+        readonly: view,
+        formatter: function(v, data) {
+            return data.orderNo;
+        }
     }];
     var viewList = [{
         title: "状态",

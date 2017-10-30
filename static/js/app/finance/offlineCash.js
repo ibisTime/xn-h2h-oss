@@ -68,9 +68,16 @@ $(function() {
         field2: 'approveDateEnd',
         twoDate: true,
         search: true,
-    },{
-        field:"payUser",
-        title:"回录人"
+    }, {
+        field: "payUser",
+        title: "回录人",
+        formatter: function(v, data) {
+            if (data.user.kind == 'P') {
+                return data.user.loginName;
+            } else {
+                return data.user.mobile;
+            }
+        }
     }, {
         field: 'payDatetime',
         title: '回录时间',

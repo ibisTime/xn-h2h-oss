@@ -19,7 +19,10 @@ $(function() {
         title: '次序',
         required: true,
         number: true,
-        readonly: view
+        readonly: view,
+        formatter: function(v, data) {
+            return data.orderNo;
+        }
     }];
     var viewList = [{
         title: "状态",

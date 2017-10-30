@@ -3,24 +3,28 @@ $(function() {
     var accountNumber = getQueryString('accountNumber') || "";
     var kind = getQueryString('kind') || "";
     var bizTypeDictCNY = {
-        "01": "注册送积分",
+        "01": "注册送人民币",
+        "02": "签到送人民币",
         "11": "充值",
         "-11": "取现",
         "HL": "红冲蓝补",
         "XXFK": "线下付款",
+        "RF": "推荐送人民币",
         "WTW_MALL": "购物付款",
         "WTW_MALL_TK": "购物退款",
-        "32": "商品确认收货"
+        "32": "商品确认收货",
+        "WTW_MALL_FL": "购物返利",
+        "CZSJF": "充值送人民币"
     };
     var bizTypeDictJF = {
         "01": "注册送积分",
-        "02": "每日签到",
-        "SCTJ": "推荐首次送积分",
-        "DCTJ": "会员多次下单成功送积分",
-        "YHHD": "会员消费送积分",
-        "DZT_TJSJF": "推荐送积分",
+        "02": "签到送积分",
+        "RF": "推荐送积分",
         "WTW_MALL": "购物付款",
+        "32": "商品确认收货",
         "WTW_MALL_TK": "购物退款",
+        "WTW_MALL_FL": "购物返利",
+        "CZSJF": "充值送人民币"
     };
 
     if (kind == "CNY" || kind == "TG") {

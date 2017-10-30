@@ -66,7 +66,14 @@ $(function() {
             title: '审核意见'
         }, {
             field: 'payUser',
-            title: '回录人'
+            title: '回录人',
+            formatter: function(v, data) {
+                if (data.user.kind == 'P' || data.user.kind == 'PA') {
+                    return data.user.loginName;
+                } else {
+                    return data.user.mobile;
+                }
+            }
         }, {
             field: 'payDatetime',
             title: '回录时间',

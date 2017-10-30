@@ -19,10 +19,11 @@ $(function() {
         required: true,
         maxlength: 20
     }, {
-        title: '数值',
+        title: '图片',
         field: 'cvalue',
+        type: "img",
         required: true,
-        maxlength: 255
+        single: true
     }];
 
     buildDetail({
@@ -33,6 +34,7 @@ $(function() {
         beforeSubmit: function(data) {
             data.remark = $('#remark').html();
             data.type = type;
+
             return data;
         }
     });

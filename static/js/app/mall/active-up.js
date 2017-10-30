@@ -9,8 +9,9 @@ $(function() {
     }, {
         field: 'location',
         title: '位置',
-        type: 'select',
-        key: "active_location",
+        type: 'hidden',
+        value: "0",
+        // key: "active_location",
         required: true,
     }, {
         field: 'orderNo',

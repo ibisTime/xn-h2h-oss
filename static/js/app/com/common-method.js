@@ -680,7 +680,9 @@ function buildList(options) {
             $('#' + item.field1).click(function() {
                 var end = $('#' + item.field2).val();
                 var obj = {
-                    elem: '#' + item.field1
+                    elem: '#' + item.field1,
+                    istime: item.type == 'datetime',
+                    format: item.type == 'datetime' ? 'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD',
                 };
                 end && (obj.max = end);
                 laydate(obj);
@@ -688,7 +690,9 @@ function buildList(options) {
             $('#' + item.field2).click(function() {
                 var start = $('#' + item.field1).val();
                 var obj = {
-                    elem: '#' + item.field2
+                    elem: '#' + item.field2,
+                    istime: item.type == 'datetime',
+                    format: item.type == 'datetime' ? 'YYYY-MM-DD hh:mm:ss' : 'YYYY-MM-DD',
                 };
                 start && (obj.min = start);
                 laydate(obj);
@@ -1100,6 +1104,9 @@ function buildDetail(options) {
         }
         if (item['amount']) {
             rules[item.field]['amount'] = item['amount'];
+        }
+        if (item['twoAmount']) {
+            rules[item.field]['twoAmount'] = item['twoAmount'];
         }
         if (item['amount1']) {
             rules[item.field]['amount1'] = item['amount1'];

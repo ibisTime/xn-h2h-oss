@@ -21,10 +21,7 @@ $(function() {
     }, {
         title: '赠送的数量',
         field: 'number',
-    }, {
-        field: 'description',
-        title: '活动图文详述',
-        type: "textarea",
+        formatter: moneyFormat,
     }, {
         title: '开始时间',
         field: 'startDatetime',
@@ -71,12 +68,9 @@ $(function() {
             window.location.href = "./active_addedit.html?code=" + data.code + "&type=" + data.type;
         },
         searchParams: {
-            // type: "1",
+            type: "4",
             companyCode: OSS.company
-        },
-        beforeDetail: function(data) {
-            window.location.href = "./active_detail.html?&v=1&code=" + data.code + "&type=" + data.type;
-        },
+        }
     });
     //上架
     $('#upBtn').click(function() {

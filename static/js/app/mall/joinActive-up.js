@@ -9,9 +9,11 @@ $(function() {
     }, {
         field: 'location',
         title: '位置',
-        type: 'select',
-        key: "active_location",
+        // type: 'select',
+        // key: "active_location",
         required: true,
+        hidden: true,
+        value: "0"
     }, {
         field: 'orderNo',
         title: 'UI次序',
@@ -40,7 +42,6 @@ $(function() {
                 }).then(function() {
                     sucDetail();
                 });
-
             });
         }
     });

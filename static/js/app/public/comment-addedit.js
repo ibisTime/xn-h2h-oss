@@ -3,16 +3,18 @@ $(function() {
     var entityName;
     var code = getQueryString('code');
     var view = getQueryString('v');
-    reqApi({
-        code: "808026",
-        json: {
-            code: entityCode,
-            updater: ""
-        },
-        sync: true
-    }).then(function(data) {
-        entityName = data.name;
-    });
+    if (entityCode) {
+        reqApi({
+            code: "808026",
+            json: {
+                code: entityCode,
+                updater: ""
+            },
+            sync: true
+        }).then(function(data) {
+            entityName = data.name;
+        });
+    }
     var remarkNote = [{
         title: "审核说明",
         field: 'remark',

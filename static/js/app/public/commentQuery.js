@@ -29,7 +29,6 @@ $(function() {
             "C": "审批不通过",
         },
         search: true
-            // key: 'comment_status'
     }, {
         field: 'nickname',
         title: '评论人'
@@ -41,10 +40,10 @@ $(function() {
     buildList({
         router: "comment",
         columns: columns,
-        // pageCode: "801025",
-        pageCode: "808960",
+        pageCode: "801025",
         searchParams: {
-            companyCode: OSS.company
+            companyCode: OSS.company,
+            statusList: ["A", "B", "C"]
         },
         beforeDetail: function(data) {
             window.location.href = "./comment_addedit.html?v=1&code=" + data.code + "&entityCode=" + data.entityCode;
