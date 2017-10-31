@@ -11,11 +11,10 @@ $(function() {
         }
     }).done(function(data) {
         var data = data.list;
-        console.log(data)
         $("#amount-CNY").text("￥" + moneyFormat(data[1].amount));
-        accountNumberCNY = data[0].accountNumber;
+        accountNumberCNY = data[1].accountNumber;
         $("#amount-JF").text(moneyFormat(data[0].amount));
-        accountNumberJF = data[1].accountNumber;
+        accountNumberJF = data[0].accountNumber;
         $("#amount-TG").text("￥" + moneyFormat(data[2].amount));
         accountNumberTG = data[2].accountNumber;
     });

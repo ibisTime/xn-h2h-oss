@@ -63,6 +63,12 @@ $(function() {
         field: "price",
         formatter: moneyFormat
     }, {
+        field: 'isJoin',
+        title: '是否参加优惠活动',
+        type: 'select',
+        data: { "0": "否", "1": " 是" },
+        search: true,
+    }, {
         field: 'isNew',
         title: '是否全新',
         type: 'select',
@@ -71,12 +77,6 @@ $(function() {
     }, {
         field: 'isPublish',
         title: '是否发布到圈子',
-        type: 'select',
-        data: { "0": "否", "1": " 是" },
-        search: true,
-    }, {
-        field: 'isJoin',
-        title: '是否参加活动',
         type: 'select',
         data: { "0": "否", "1": " 是" },
         search: true,
@@ -116,12 +116,16 @@ $(function() {
     $('#hotBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
+            toastr.warning("请选择记录");
             return;
         };
 
         if (selRecords.length > 1) {
-            toastr.info("不能多选");
+            toastr.warning("不能多选");
+            return;
+        };
+        if (selRecords['0'].isJoin == "1") {
+            toastr.warning("参加优惠活动的商品，不能进行热门设置");
             return;
         };
         window.location.href = "./goods_hot.html?code=" + selRecords[0].code;
@@ -130,17 +134,17 @@ $(function() {
     $('#downBtn').click(function() {
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
-            toastr.info("请选择记录");
+            toastr.warning("请选择记录");
             return;
         }
 
         if (selRecords.length > 1) {
-            toastr.info("不能多选");
+            toastr.warning("不能多选");
             return;
         }
 
         if (selRecords[0].status != 3) {
-            toastr.info("该商品状态不可强制下架");
+            toastr.warning("该商品状态不可强制下架");
             return;
         }
         confirm("确认强制下架？").then(function() {
@@ -163,7 +167,7 @@ $(function() {
         };
 
         if (selRecords.length > 1) {
-            toastr.info("不能多选");
+            toastr.warning("不能多选");
             return;
         };
         window.location.href = "./goodsCommentQuery.html?entityCode=" + selRecords[0].code;
