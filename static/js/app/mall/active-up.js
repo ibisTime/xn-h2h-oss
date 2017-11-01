@@ -3,10 +3,6 @@ $(function() {
     var code = getQueryString('code');
 
     var fields = [{
-        field: 'kind',
-        type: 'hidden',
-        value: '1'
-    }, {
         field: 'location',
         title: '位置',
         type: 'hidden',

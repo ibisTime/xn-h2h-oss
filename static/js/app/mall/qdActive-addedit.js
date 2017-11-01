@@ -35,7 +35,7 @@ $(function() {
         field: "type",
         type: "select",
         data: {
-            "2": "邀请好友送活动"
+            "2": "签到活动"
         },
         // key: "cz_active_type",
         required: true,
@@ -73,10 +73,10 @@ $(function() {
     }, {
         field: 'description',
         title: '活动详述',
-        normalArea: true,
-        type: "textarea",
+        value: "0",
+        type: "hidden",
         required: true,
-        readonly: view,
+        readonly: view
     }, {
         title: "备注",
         field: "remark",
@@ -96,6 +96,19 @@ $(function() {
     }];
     if (view) {
         fields = fields.concat(viewList);
+    };
+
+    function decode(str) {
+        if (!str || str.length === 0) {
+            return '';
+        }
+        var s = '';
+        s = str.replace(/&amp;/g, "&");
+        s = s.replace(/<(?=[^o][^)])/g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br/>");
+        return s;
     }
     buildDetail({
         fields: fields,

@@ -9,8 +9,7 @@ $(function() {
         field: "type",
         type: "select",
         key: "cz_active_type",
-        formatter: Dict.getNameForList("cz_active_type"),
-        // search: true
+        formatter: Dict.getNameForList("cz_active_type")
     }, {
         field: 'currency',
         title: "赠送币种",
@@ -19,7 +18,7 @@ $(function() {
         formatter: Dict.getNameForList("currency"),
         search: true
     }, {
-        title: '赠送的比例',
+        title: '赠送的数量',
         field: 'number',
         formatter: moneyFormat,
     }, {
@@ -68,6 +67,18 @@ $(function() {
     });
     //上架
     $('#upBtn').click(function() {
+        var activeNumber;
+        reqApi({
+            code: "801052",
+            json: {
+                status: "1",
+                type: "3"
+            },
+            sync: true
+        }).then(function(data) {
+            activeNumber = data.length;
+        });
+
         var selRecords = $('#tableList').bootstrapTable('getSelections');
         if (selRecords.length <= 0) {
             toastr.warning("请选择记录");
@@ -81,6 +92,10 @@ $(function() {
 
         if (selRecords[0].status == 1) {
             toastr.warning("该记录不是可上架的状态");
+            return;
+        }
+        if (activeNumber >= 1) {
+            toastr.warning("只能同时上架一个活动");
             return;
         }
         window.location.href = "active_up.html?Code=" + selRecords[0].code;

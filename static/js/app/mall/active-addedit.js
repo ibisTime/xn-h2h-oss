@@ -47,10 +47,11 @@ $(function() {
         required: true,
         readonly: view
     }, {
-        title: '赠送的数量',
+        title: '赠送的比例',
         field: 'number',
+        help: "用户的充值金额乘以这个比例，<br>就是赠送的积分或者人民币数目",
         required: true,
-        amount: true,
+        twoAmount: true,
         readonly: view,
         formatter: moneyFormat
     }, {
@@ -69,11 +70,19 @@ $(function() {
         dateOption: end,
         readonly: view,
         required: true
-    }, {
+    }, view ? {
+        field: 'descriptionDetail',
+        title: '活动详述',
+        readonly: true,
+        formatter: function(v, data) {
+            descriptionDetail = decode(data.description);
+            return descriptionDetail;
+        }
+    } : {
         field: 'description',
-        title: '活动图文详述',
-        value: "0",
-        type: "hidden",
+        title: '活动详述',
+        normalArea: true,
+        type: "textarea",
         required: true,
         readonly: view,
     }, {
@@ -101,6 +110,19 @@ $(function() {
     }];
     if (view) {
         fields = fields.concat(viewList);
+    };
+
+    function decode(str) {
+        if (!str || str.length === 0) {
+            return '';
+        }
+        var s = '';
+        s = str.replace(/&amp;/g, "&");
+        s = s.replace(/<(?=[^o][^)])/g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br/>");
+        return s;
     }
     buildDetail({
         fields: fields,
@@ -110,11 +132,7 @@ $(function() {
         editCode: '801042',
         view: view,
         beforeSubmit: function(data) {
-            if (data.description == "" && data.description2) {
-                delete data.description;
-                data.description = data.description2;
-                delete data.description2
-            };
+            data.number = data.number * 1000;
             return data;
         }
     });

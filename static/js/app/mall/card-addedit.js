@@ -5,7 +5,7 @@ $(function() {
         elem: '#startDatetime',
         format: 'YYYY-MM-DD hh:mm:ss',
         min: laydate.now(),
-        // istoday: false,
+        istoday: false,
         istime: true,
         choose: function(datas) {
             var d = new Date(datas);
@@ -20,7 +20,7 @@ $(function() {
         format: 'YYYY-MM-DD hh:mm:ss',
         min: laydate.now(),
         istime: true,
-        // istoday: false,
+        istoday: false,
         choose: function(datas) {
             var d = new Date(datas);
             d.setDate(d.getDate());

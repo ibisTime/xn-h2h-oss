@@ -1852,7 +1852,8 @@ function buildDetail(options) {
                     } else if (item.type == 'textarea' && !item.normalArea) {
                         $('#' + item.field)[0].editor.$txt.html(displayValue);
                     } else if (item.type == 'textarea' && item.normalArea) {
-                        $('#' + item.field).val(displayValue);
+                        // $('#' + item.field).val(displayValue);
+                        $('#' + item.field).html(displayValue);
                     } else if (item.type == 'citySelect') {
                         $('#province').val(data.province);
                         $('#province').trigger('change');

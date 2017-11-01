@@ -70,7 +70,15 @@ $(function() {
         dateOption: end,
         readonly: view,
         required: true
-    }, {
+    }, view ? {
+        field: 'descriptionDetail',
+        title: '活动详述',
+        readonly: true,
+        formatter: function(v, data) {
+            descriptionDetail = decode(data.description);
+            return descriptionDetail;
+        }
+    } : {
         field: 'description',
         title: '活动详述',
         normalArea: true,
@@ -96,6 +104,19 @@ $(function() {
     }];
     if (view) {
         fields = fields.concat(viewList);
+    };
+
+    function decode(str) {
+        if (!str || str.length === 0) {
+            return '';
+        }
+        var s = '';
+        s = str.replace(/&amp;/g, "&");
+        s = s.replace(/<(?=[^o][^)])/g, "&lt;");
+        s = s.replace(/>/g, "&gt;");
+        s = s.replace(/\"/g, "&quot;");
+        s = s.replace(/\n/g, "<br/>");
+        return s;
     }
     buildDetail({
         fields: fields,

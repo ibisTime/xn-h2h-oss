@@ -117,7 +117,13 @@ $(function() {
         }
     });
     if (customer) {
-        $(".tools .toolbar").html('<li style="display:block;" id="backBtn"><span><img src="/static/images/t01.png"></span>返回</li>');
+        $(".tools .toolbar").append('<li style="display:block;" id="backBtn"><span><img src="/static/images/t01.png"></span>返回</li>');
+        $("#rockBtn").remove();
+        $("#activeBtn").remove();
+        $("#accountBtn").remove();
+        $("#goodsBtn").remove();
+        $("#sellOrderBtn").remove();
+        $("#buyOrderBtn").remove();
     };
     $("#backBtn").click(function() {
         window.location.href = '../user/customer.html'

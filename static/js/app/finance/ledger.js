@@ -24,7 +24,7 @@ $(function() {
         "32": "商品确认收货",
         "WTW_MALL_TK": "购物退款",
         "WTW_MALL_FL": "购物返利",
-        "CZSJF": "充值送人民币"
+        "CZSJF": "充值送积分"
     };
 
     if (kind == "CNY" || kind == "TG") {
@@ -100,6 +100,7 @@ $(function() {
 
     $('.tools .toolbar').html('<li style="display:block;" id="backBtn"><span><img src="/static/images/t01.png"></span>返回</li>');
     $('#backBtn').on('click', function() {
+        sessionStorage.setItem('listSearchs', '');
         goBack();
     });
 });

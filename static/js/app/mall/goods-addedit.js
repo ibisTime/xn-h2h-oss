@@ -100,6 +100,9 @@ $(function() {
         field: 'orderNo',
         title: 'UI次序',
         readonly: true,
+        formatter: function(v, data) {
+            return data.orderNo;
+        }
     }, {
         field: 'remark',
         title: '备注',

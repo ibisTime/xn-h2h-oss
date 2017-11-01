@@ -37,7 +37,6 @@ $(function() {
         data: {
             "5": "交易成功送活动"
         },
-        // key: "cz_active_type",
         required: true,
         value: "5"
     }, {
