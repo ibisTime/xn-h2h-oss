@@ -51,7 +51,8 @@ $(function() {
         field: 'number',
         help: "用户的消费金额乘以这个比例，<br>就是赠送的积分或者人民币数目",
         required: true,
-        twoAmount: true,
+        number: true,
+        // twoAmount: true,
         readonly: view,
         formatter: moneyFormat
     }, {
@@ -88,10 +89,6 @@ $(function() {
         field: "status",
         key: "czActive_status",
         formatter: Dict.getNameForList("czActive_status"),
-        readonly: view
-    }, {
-        title: "UI次序",
-        field: "orderNo",
         readonly: view
     }];
     if (view) {

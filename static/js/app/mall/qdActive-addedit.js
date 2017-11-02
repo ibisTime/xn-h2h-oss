@@ -37,7 +37,6 @@ $(function() {
         data: {
             "2": "签到活动"
         },
-        // key: "cz_active_type",
         required: true,
         value: "2"
     }, {
@@ -89,27 +88,12 @@ $(function() {
         key: "czActive_status",
         formatter: Dict.getNameForList("czActive_status"),
         readonly: view
-    }, {
-        title: "UI次序",
-        field: "orderNo",
-        readonly: view
     }];
     if (view) {
         fields = fields.concat(viewList);
     };
 
-    function decode(str) {
-        if (!str || str.length === 0) {
-            return '';
-        }
-        var s = '';
-        s = str.replace(/&amp;/g, "&");
-        s = s.replace(/<(?=[^o][^)])/g, "&lt;");
-        s = s.replace(/>/g, "&gt;");
-        s = s.replace(/\"/g, "&quot;");
-        s = s.replace(/\n/g, "<br/>");
-        return s;
-    }
+
     buildDetail({
         fields: fields,
         code: code,

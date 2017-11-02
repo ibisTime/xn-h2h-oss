@@ -51,7 +51,7 @@ $(function() {
         field: 'number',
         help: "用户的充值金额乘以这个比例，<br>就是赠送的积分或者人民币数目",
         required: true,
-        twoAmount: true,
+        number: true,
         readonly: view,
         formatter: moneyFormat
     }, {
@@ -70,18 +70,9 @@ $(function() {
         dateOption: end,
         readonly: view,
         required: true
-    }, view ? {
-        field: 'descriptionDetail',
-        title: '活动详述',
-        readonly: true,
-        formatter: function(v, data) {
-            descriptionDetail = decode(data.description);
-            return descriptionDetail;
-        }
-    } : {
+    }, {
         field: 'description',
         title: '活动详述',
-        normalArea: true,
         type: "textarea",
         required: true,
         readonly: view,
@@ -97,33 +88,12 @@ $(function() {
         key: "czActive_status",
         formatter: Dict.getNameForList("czActive_status"),
         readonly: view
-    }, {
-        title: "位置",
-        field: "location",
-        type: "select",
-        key: "active_location",
-        readonly: view
-    }, {
-        title: "UI次序",
-        field: "orderNo",
-        readonly: view
     }];
     if (view) {
         fields = fields.concat(viewList);
     };
 
-    function decode(str) {
-        if (!str || str.length === 0) {
-            return '';
-        }
-        var s = '';
-        s = str.replace(/&amp;/g, "&");
-        s = s.replace(/<(?=[^o][^)])/g, "&lt;");
-        s = s.replace(/>/g, "&gt;");
-        s = s.replace(/\"/g, "&quot;");
-        s = s.replace(/\n/g, "<br/>");
-        return s;
-    }
+
     buildDetail({
         fields: fields,
         code: code,

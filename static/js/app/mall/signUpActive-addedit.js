@@ -88,10 +88,6 @@ $(function() {
         key: "czActive_status",
         formatter: Dict.getNameForList("czActive_status"),
         readonly: view
-    }, {
-        title: "UI次序",
-        field: "orderNo",
-        readonly: view
     }];
     if (view) {
         fields = fields.concat(viewList);

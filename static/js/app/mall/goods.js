@@ -7,12 +7,12 @@ $(function() {
         title: '',
         checkbox: true
     }, {
-        title: "商品发布人",
-        field: "mobile"
-    }, {
         field: 'name',
         title: '商品名称',
         search: true,
+    }, {
+        title: "商品发布人",
+        field: "mobile"
     }, {
         field: 'category',
         title: '大类',

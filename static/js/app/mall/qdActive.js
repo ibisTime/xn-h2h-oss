@@ -42,9 +42,6 @@ $(function() {
         formatter: Dict.getNameForList("czActive_status"),
         search: true
     }, {
-        field: 'orderNo',
-        title: 'UI次序'
-    }, {
         title: "备注",
         field: "remark"
     }];
@@ -98,8 +95,21 @@ $(function() {
         if (activeNumber >= 1) {
             toastr.warning("只能同时上架一个活动");
             return;
-        }
-        window.location.href = "active_up.html?Code=" + selRecords[0].code;
+        };
+        confirm("确认上架？").then(function() {
+            reqApi({
+                code: '801043',
+                json: {
+                    "code": selRecords[0].code,
+                    remark: "上架",
+                    "location": "0",
+                    "orderNo": "0",
+                }
+            }).then(function() {
+                toastr.info("操作成功");
+                $('#tableList').bootstrapTable('refresh', { url: $('#tableList').bootstrapTable('getOptions').url });
+            });
+        }, function() {});
     });
     //下架
     $('#downBtn').click(function() {

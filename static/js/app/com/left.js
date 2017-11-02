@@ -9,7 +9,8 @@ $(function() {
 			return;
 		}
 		var data = {"parentCode":parentCode,"type":"1", 'roleCode': sessionStorage.getItem('roleCode')};
-		
+		var timestamp = new Date().getTime();
+
 		// 一级菜单
 		reqApi({
 			code: '805026',
@@ -50,7 +51,7 @@ $(function() {
 							}
 							html += "<li class='"+(url.indexOf('*') > -1 && 'disabled')+
 								"' id=\""+nextItem.code+"\"><cite></cite><a id=\"child_menu_"+i+"\" href=\""
-								+url + "\" target=\"rightFrame\">"+nextItem.name+"</a><i></i></li>"
+								+url  +"?timestamp=" + timestamp+ "\" target=\"rightFrame\">"+nextItem.name+"</a><i></i></li>"
 				        });
 						$(me).parent().next().html(html);
 						$(me).attr('data-loaded', '1');

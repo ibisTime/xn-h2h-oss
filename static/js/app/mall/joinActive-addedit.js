@@ -93,12 +93,6 @@ $(function() {
         formatter: Dict.getNameForList("czActive_status"),
         readonly: view
     }, {
-        title: "位置",
-        field: "location",
-        type: "select",
-        key: "active_location",
-        readonly: view
-    }, {
         title: "UI次序",
         field: "orderNo",
         readonly: view

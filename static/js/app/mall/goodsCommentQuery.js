@@ -23,13 +23,12 @@ $(function() {
         title: '状态',
         type: 'select',
         data: {
-            // "D": "被过滤",
             "A": "已发布",
             "B": "审批通过",
             "C": "审批不通过",
+            "D": "被过滤",
         },
         search: true
-            // key: 'comment_status'
     }, {
         field: 'nickname',
         title: '评论人'
@@ -41,7 +40,6 @@ $(function() {
     buildList({
         columns: columns,
         pageCode: "801025",
-        // pageCode: "808960",
         searchParams: {
             companyCode: OSS.company,
             entityCode: entityCode
