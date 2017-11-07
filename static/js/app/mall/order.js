@@ -110,7 +110,7 @@ $(function() {
     buildList({
         columns: columns,
         pageCode: '808065',
-        singleSelect: false,
+        // singleSelect: false,
         searchParams: {
             toUser: toUser,
             applyUser: applyUser

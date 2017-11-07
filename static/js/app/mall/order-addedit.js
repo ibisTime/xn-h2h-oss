@@ -93,6 +93,7 @@ $(function() {
             field: "payType",
             type: "select",
             key: "pay_type",
+            formatter: Dict.getNameForList('pay_type'),
             readonly: true
         }, {
             field: "promptTimes",
